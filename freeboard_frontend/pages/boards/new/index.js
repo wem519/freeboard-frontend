@@ -4,30 +4,41 @@ import  {useState} from 'react'
 export default function BoardsNewPage(){
 
     const[name, setName] = useState("")
-    const[nameError, setNameError] =useState("")
-    
     const[pwd, setPwd] = useState("")
-    const[pwdError, setPwdError] = useState("")
-    
     const[text, setText]= useState("")
-    const[textError, setTextError] = useState("")
-    
     const[contents, setContents] =useState("")
+   
+   
+   const[nameError, setNameError] =useState("")
+    const[pwdError, setPwdError] = useState("")
+    const[textError, setTextError] = useState("")
     const[contentsError, setContentsError] = useState("")
 
 
 
     function onChangeName(event){
         setName(event.target.value)
+        if(event.target.value !== ""){
+            setNameError("")
+          }
     }
     function onChangePwd(event){
         setPwd(event.target.value)
+        if(event.target.value !==""){
+            setPwdError("")
+        }
     }
     function onChangeText(event){
         setText(event.target.value)
+        if(event.target.value !==""){
+            setTextError("")
+        }
     }
     function onChangeContents(event){
         setContents(event.target.value)
+        if(event.target.value !==""){
+            setContentsError("")
+        }
     }
 
     function onClickSignup(){

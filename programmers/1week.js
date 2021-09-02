@@ -71,3 +71,47 @@ function days(month){
 	console.log("30")
 	}
 }
+
+//9.반복문: 숫자 더하기
+
+function sum(num) {
+
+	let count = 0;
+	for (i=0; i<=num; i++){
+		count = count + i
+	}
+	console.log(count)
+}
+
+
+//10. 특정 문자열 세기
+
+function countLetter(str){
+	let count =0;
+	for (0; i<str.length; i++){
+		if(str[i] ==='a' || str[i] ==='A'){
+			count = count + 1;
+		}
+		console.log(countLetter)
+	}
+
+//11. 문자열 삽입
+
+function makeNumber(num){
+	for( let i=1; i<=num; i++){
+		str= str +1;
+
+		if(i !== num){
+			str = str + "-";
+		}
+	}
+	console.log(makeNumber)
+}
+
+//12. 홀수 문자열
+
+
+
+//13. 가장 큰 수 찾기
+
+function bigNum(str)

@@ -110,6 +110,7 @@ export const PostButton = styled.button`
     background-color:black;
     color:white;
     margin-bottom: 10px;
+    cursor:pointer;
 `
 export const Address = styled.input`
     width: 996px;
@@ -143,6 +144,7 @@ export const Upload = styled.button`
     background-color: #BDBDBD;
     margin-right: 24px;
     margin-top:10px;
+    cursor:pointer;
 `
 
 export const Upload1 = styled.div`
