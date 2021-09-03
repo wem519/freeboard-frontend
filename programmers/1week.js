@@ -94,6 +94,7 @@ function countLetter(str){
 		}
 		console.log(countLetter)
 	}
+}
 
 //11. 문자열 삽입
 
@@ -109,9 +110,26 @@ function makeNumber(num){
 }
 
 //12. 홀수 문자열
+ function makeOdd(num){
+	 let str =""
+	 for (let i=0; i<=num; i++){
+		 if (i % 2 ===1){
+			 str = str + 1
+		 }
+	 }
+	 console.log(str)
+}
 
 
 
 //13. 가장 큰 수 찾기
 
-function bigNum(str)
+function bigNum(str) {
+	let max = 0;
+	for (let i = 0; i <= str.length; i++) {
+		if (Number(str[i]) >= max) {
+			max = Number(str[i])
+		}
+	}
+	console.log(max)
+	}
