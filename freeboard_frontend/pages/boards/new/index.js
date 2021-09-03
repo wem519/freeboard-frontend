@@ -1,8 +1,17 @@
 import {Wrapper, Title, User, IdGroup, IdName, Text1, PwdGroup, PwdName, Text2, TextGroup, TextName, Text3,ContentGroup, ContentName, Text4, AddressGroup,PostName,PostWrapper, PostNumber, PostButton, Address, YoutubeGroup, YoutubeName, YoutubeText, PictureGroup, PictureName, Upload, RadioGroup, RadioName, RadioButton,RadioLabel, ButtonGroup, Cancel, Summit, ErrorComment } from "../../../styles/boards";
 import  {useState} from 'react'
+import {useMutation, gql} from "@apollo/client"
+
+const CREATE_BOARD = gql`
+mutation creatwBoard($createBoardInput:CreateBoardInput!){createBoard(createBoardInput:$createBoardInput){
+    _id
+    }
+}
+`
 
 export default function BoardsNewPage(){
 
+    const [createBoard] = useMutation(CREATE_BOARD)
     const[name, setName] = useState("")
     const[pwd, setPwd] = useState("")
     const[text, setText]= useState("")
@@ -41,7 +50,7 @@ export default function BoardsNewPage(){
         }
     }
 
-    function onClickSignup(){
+    async function onClickSignup(){
 
         if(name === ""){
             setNameError("이름이 없습니다.")
@@ -55,6 +64,18 @@ export default function BoardsNewPage(){
         if(contents === ""){
             setContentsError("내용이 없습니다.")
         }
+        
+        const result = await createBoard({
+            variables:{
+                createBoardInput:{
+                    writer: name,
+                    password: pwd,
+                    title: text,
+                    contents: contents
+                }
+            }
+        })
+        console.log(result)
     }
 
     return(
