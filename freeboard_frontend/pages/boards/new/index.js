@@ -1,9 +1,47 @@
-import {Wrapper, Title, User, IdGroup, IdName, Text1, PwdGroup, PwdName, Text2, TextGroup, TextName, Text3,ContentGroup, ContentName, Text4, AddressGroup,PostName,PostWrapper, PostNumber, PostButton, Address, YoutubeGroup, YoutubeName, YoutubeText, PictureGroup, PictureName, Upload, RadioGroup, RadioName, RadioButton,RadioLabel, ButtonGroup, Cancel, Summit, ErrorComment } from "../../../styles/boards";
+import {
+    Wrapper, 
+    Title, 
+    User, 
+    IdGroup, 
+    IdName, 
+    Text1, 
+    PwdGroup, 
+    PwdName, 
+    Text2, 
+    TextGroup, 
+    TextName, 
+    Text3,ContentGroup, 
+    ContentName, 
+    Text4, 
+    AddressGroup, 
+    PostName,
+    PostWrapper, 
+    PostNumber, 
+    PostButton,
+    Address, 
+    YoutubeGroup,
+    YoutubeName,
+    YoutubeText, 
+    PictureGroup, 
+    PictureName, 
+    Upload, 
+    RadioGroup, 
+    RadioName, 
+    RadioButton,
+    RadioLabel, 
+    ButtonGroup, 
+    Summit, 
+    ErrorComment 
+} from "../../../styles/boards";
 import  {useState} from 'react'
 import {useMutation, gql} from "@apollo/client"
+import router from 'next/router'
 
 const CREATE_BOARD = gql`
-mutation creatwBoard($createBoardInput:CreateBoardInput!){createBoard(createBoardInput:$createBoardInput){
+mutation createBoard($createBoardInput:CreateBoardInput!){createBoard(createBoardInput:$createBoardInput){
+    writer
+    title
+    contents
     _id
     }
 }
@@ -65,23 +103,27 @@ export default function BoardsNewPage(){
             setContentsError("내용이 없습니다.")
         }
         
-        const result = await createBoard({
-            variables:{
-                createBoardInput:{
-                    writer: name,
-                    password: pwd,
-                    title: text,
-                    contents: contents
+        if( name !==""&& pwd !== "" && text !== "" && contents !==""){
+            const result = await createBoard({
+                variables:{
+                    createBoardInput:{
+                        writer: name,
+                        password: pwd,
+                        title: text,
+                        contents: contents
+                    }
                 }
-            }
-        })
-        console.log(result)
+            })
+            console.log(result.data.createBoard.writer)
+            router.push(`/boards/boards-read/${result.data.createBoard._id}`)
+        }
+       
     }
 
     return(
         <Wrapper>  
-            <Title>게시물 수정</Title>
-            <User>
+            <Title>게시물 등록</Title>
+            <User>  
                 <IdGroup>
                     <IdName>작성자</IdName>
                     <Text1 name="name" type="text" placeholder="이름을 적어주세요." onChange={onChangeName}></Text1>
@@ -140,7 +182,6 @@ export default function BoardsNewPage(){
                 <RadioLabel htmlFor="image">사진</RadioLabel>
             </RadioGroup>
             <ButtonGroup>
-                <Cancel>취소하기</Cancel>
                 <Summit onClick={onClickSignup}>등록하기</Summit>
             </ButtonGroup>
         </Wrapper>

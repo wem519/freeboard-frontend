@@ -24,6 +24,7 @@ export const User =styled.div`
      flex-direction:row;
      justify-content:space-between;
      padding-top:40px;
+     margin-bottom: 40px;
 
 `
 export const IdGroup = styled.div`
@@ -59,6 +60,7 @@ export const Text2 = styled.input`
 export const TextGroup = styled.div`
     width:996px;
     height:92px;
+    margin-bottom:40px;
 ` 
 export const TextName = styled.div`
     font-size:16px;
@@ -73,6 +75,7 @@ export const Text3 = styled.input`
 export const ContentGroup = styled.div`
     width:100%;
     height:520px;
+    margin-bottom:16px;
 `
 export const ContentName = styled.div`
     font-size:16px;
@@ -97,6 +100,7 @@ export const PostName = styled.div`
 export const PostWrapper = styled.div`
     display:flex;
     flex-direction:row; 
+    margin-bottom:16px;
 `
 export const PostNumber = styled.input`
     width:77px;
@@ -115,11 +119,12 @@ export const PostButton = styled.button`
 export const Address = styled.input`
     width: 996px;
     height: 52px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 `
 export const YoutubeGroup = styled.div`
     width:996px;
     height:81px;
+    margin:40px;
 `
 export const YoutubeName = styled.div`
     font-size:16px;
@@ -172,16 +177,7 @@ export const ButtonGroup = styled.div`
     justify-content:center;
     padding-top:80px;
 `
-export const Cancel = styled.button`
-    width: 179px;
-    height: 52px;
-    background-color: #bdbdbd;
-    border: none;
-    font-size:16px;
-    margin-left: 12px;
-    margin-right: 12px;
-    cursor:pointer;
-`
+
 export const Summit = styled.button`
     width: 179px;
     height:52px;
