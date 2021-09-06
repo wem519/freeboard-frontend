@@ -1,0 +1,18 @@
+export default function BoardReadUI(props){
+    
+    
+    return(
+        <> 
+         <div>게시물 상세페이지입니다</div>
+         <div>게시글 번호:{props.router.query.number}</div>
+         <div>게시글 작성자:{props.data?.fetchBoard.writer}</div> 
+         <div>게시글 제목:{props.data?.fetchBoard.title}</div>
+         <div>게시글 내용{props.data?.fetchBoard.contents}:</div> 
+         {/* <div>게시글 작성자:{data ? data.fetchBoard.writer : "loading..."}</div>
+         <div>게시글 제목:{data ? data.fetchBoard.title : "loading..."}</div>
+         <div>게시글 내용{data ? data.fetchBoard.contents : "loading..."}:</div> */}
+      </>
+     )
+
+}
+

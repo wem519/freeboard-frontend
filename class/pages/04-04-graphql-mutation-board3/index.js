@@ -17,7 +17,7 @@ export default function GraphqlMutationBoard3Page(){
 
     const [ createBoard ] = useMutation(CREATE_BOARD)
     const[myWriter, setMyWriter] = useState("")
-    const[myTtitle, setMyTitle] = useState("")
+    const[myTitle, setMyTitle] = useState("")
     const[myContents, setMyContents] = useState("")
 
     
@@ -38,7 +38,7 @@ export default function GraphqlMutationBoard3Page(){
 
     async function aaa() {
         const result = await createBoard({
-          variables: {writer: myWriter, title: myTtitle, contents: myContents}
+          variables: {writer: myWriter, title: myTitle, contents: myContents}
         })
         console.log(result)
         console.log(result.data.createBoard.number)
