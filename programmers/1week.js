@@ -152,7 +152,7 @@ function grade(score) {
 	}
 }
 
-//마이페이지
+//15. 마이페이지
 
 let count = 0;
 let money = 0;
