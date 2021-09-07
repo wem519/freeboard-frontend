@@ -11,7 +11,7 @@ return Number(s)
 //parseInt(): 문자 -->숫자
 //parseFloat(): 숫자 --> 문자
 
-//나머지 답변에 대해서는 한번 더 고민해볼 것(아직 이해 X)
+//나머지 답변에 대해서는 한번 더 고민해볼 것
 
 //2. 같은 숫자는 싫어
 
@@ -41,3 +41,52 @@ function solution(phone_number) {
 }
 
 //다른 사람들 답변 중 효율적인 것 참고할 것
+
+//4. 짝수와 홀수
+function solution(num) {
+    if (num % 2 == 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
+}
+//삼항 연산자로 다음과 같이 표현도 가능하다.
+function solution(num){
+    return num % 2 ===0 ?'Even': 'Odd'
+}
+
+//다른 사람들의 간단한 함수를 보면 이해 안가는 부분이 너무 많다.
+//검색할 수 있는 것은 최대한 검색해보자.
+
+
+//5.평균 구하기
+
+//평균 구하기=모든 정수의 합 /정수의 갯수
+
+function solution(arr) {
+    var answer = 0;
+    for  (var i=0; i<arr.length; i++){
+        answer += arr[i]; //a+=b => a=a+b
+    }    
+    return answer / arr.length    
+}
+
+//6. 가운데 글자 가져오기
+
+function solution(s){
+    const half  =Math.floor(s.length / 2);
+    
+    if (s.length % 2 === 0){
+    return s[half - 1] + s[half];
+    }else{
+    return s[half];
+    }
+}
+
+//삼항연산자
+
+function solution(s){
+    const half  =  Math.floor(s.length / 2);
+    
+    return s.length % 2 ===0 ? s[half - 1] + s[half] : s[half]
+}
