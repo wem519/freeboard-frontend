@@ -90,3 +90,56 @@ function solution(s){
     
     return s.length % 2 ===0 ? s[half - 1] + s[half] : s[half]
 }
+
+// 7. 서울에서 김서방 찾기
+
+// function solution(seoul){
+//     var answer = "";
+//     for (let i=0; i<seoul.length; i++){
+//         if(seoul[i] == "Kim") answer += "김서방은 " + i + "에 있다";
+//     }
+//     return answer;
+
+    function solution(seoul){
+        let x = 0;
+            for( let i=0; i <seoul.length; i++){
+                if(seoul[i] === "Kim"){
+                    x=i;
+                    
+                    break; //반복문을 종료
+                }
+            }
+            return '김서방은 ' +x +'에 있다'
+        }
+
+//8. 문자열 다루기 기본
+function solution(s) {
+    if (!(s.length == 4 || s.length ==  6)){
+        return false
+    } else {
+        const tmp = s.split('')
+        for(let i =0;i<tmp.length;i++){
+        if (isNaN(tmp[i])){
+            return false
+        }
+        }
+
+    }
+    return true
+}
+
+//isNan()함수는 어떤 같이 NaN(Not-A-Number)인지 판별함
+//참고 답안
+
+
+//9. 약수의 합
+
+function solution(n){
+    let answer = 0;
+    for( let i=1; i <= n; i++){
+        if (n % i === 0) {
+            answer = answer + i;
+        }
+    }
+    return answer;
+}
