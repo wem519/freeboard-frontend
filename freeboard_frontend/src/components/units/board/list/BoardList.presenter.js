@@ -5,12 +5,20 @@ import {
     SearchDate,
     SearchButton,
     Board,
+    Row,
+    ColumnNumber,
+    ColumnTitleHeader,
+    ColumnWriter,
+    ColumnDate,
+    ColumnTitle,
     NumberWrapper,
     Previos,
     Next,
     Number,
     FooterWrapper,
-    BoardSummit
+    BoardSummit,
+
+   
 } from "../list/BoardList.styles"
 
 export default function BoardListUI(props){
@@ -23,13 +31,21 @@ export default function BoardListUI(props){
                 <SearchButton>검색하기</SearchButton>
             </SearchWrapper>
             <Board>
-                <div></div>
-                {props.data?.fetchBoards.map((el) =>(
-                <Row key={el._id}>
-                <div>{el.writer}</div>
-                <div>{el.title}</div>
-                <div>{el.createdAt}</div>
+                <Row>
+                <ColumnNumber>번호</ColumnNumber>
+                <ColumnTitleHeader>제목</ColumnTitleHeader>
+                <ColumnWriter>작성자</ColumnWriter>
+                <ColumnDate>작성일</ColumnDate>
                 </Row>
+                {/* <div></div> */}
+                {props.data?.fetchBoards.map((el,index) =>(
+                <Row key={el._id}>
+                <ColumnNumber>{index}</ColumnNumber>
+                <ColumnTitle id={el._id} onClick={props.onClickMoveToBoardDetail}>{el.title}</ColumnTitle>
+                <ColumnWriter>{el.writer}</ColumnWriter>
+                <ColumnDate>{el.createdAt}</ColumnDate>
+                </Row>
+                
                 ))}
             </Board>
             <FooterWrapper>
@@ -39,7 +55,7 @@ export default function BoardListUI(props){
                     <Number>2</Number>
                     <Next src="/right.png"></Next>
                 </NumberWrapper>
-                <BoardSummit>게시물 등록하기</BoardSummit>
+                <BoardSummit onClick={props.onClickMoveToBoardNew}>게시물 등록하기</BoardSummit>
             </FooterWrapper>
         </Wrapper>
         

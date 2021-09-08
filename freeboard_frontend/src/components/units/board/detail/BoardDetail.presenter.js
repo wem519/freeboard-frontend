@@ -19,12 +19,16 @@ import {
     Good,
     GoodCount,
     Hate,
-    HateCount
+    HateCount,
+    FooterWrapper,
+    ListButton,
+    DeleteButton
 } from "../../../../components/units/board/detail/BoardDetail.styles"
 
 export default function BoardDetailUI(props){
 
     return(
+    <div>
         <Wrapper>
             <Address/>
             <Headers>
@@ -54,7 +58,13 @@ export default function BoardDetailUI(props){
                 </Feeling>           
             </FeelingWrapper>
         </Wrapper>
-        
+        <FooterWrapper>
+            <ListButton onClick={props.onClickMoveToList}>목록으로</ListButton>
+            <DeleteButton 
+            // id={props.data?.fetchBoard._id}
+            onClick={props.onClickDelete}>삭제하기</DeleteButton>
+        </FooterWrapper>
+    </div>   
     )
 }
 

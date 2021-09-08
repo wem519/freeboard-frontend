@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     /* background-color: black; */
     width: 1200px;
     height:800px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin:40px auto;
     /* margin-left:360px;
     margin-right:360px; */
@@ -33,8 +33,42 @@ export const SearchButton = styled.button`
 export const Board = styled.div`
     width:1200px;
     height: 583px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 `
+export const Row = styled.div`
+    display:flex;
+    flex-direction:row;
+    border-bottom: 1px solid black;
+    width:1200px;
+    height:52px;
+    line-height:52px;
+    `
+export const ColumnNumber = styled.div`
+    width: 10%;
+    text-align:center;
+`
+export const ColumnTitleHeader = styled.div`
+    width: 60%;
+    text-align:center;
+`
+export const ColumnWriter = styled.div`
+    width:10%;
+    text-align:center;
+`
+export const ColumnDate = styled.div`
+    width:20%;
+    text-align:center;
+`
+export const ColumnTitle = styled.div`
+    width: 60%;
+    text-align:center;
+    cursor: pointer;
+
+    :hover{
+        color: red;
+    }
+`
+
 export const FooterWrapper = styled.div`
     width:1200px;
     height: 52px;
@@ -72,10 +106,10 @@ export const BoardSummit = styled.button`
     width: 171px;
     height: 52px;
     margin-top: 30px;
+    cursor: pointer;
+
+    :hover{
+        color:red;
+    }
     
-`
-export const Row = styled.div`
-    display:flex;
-    flex-direction:row;
-    border-bottom: 1px solid black;
 `

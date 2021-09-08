@@ -149,3 +149,31 @@ export const HateCount = styled.div`
     font-size:16px;
 
 `
+export const FooterWrapper = styled.div`
+    width:1200px;
+    height:60px;
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    margin:40px auto;
+    `
+export const ListButton = styled.button`
+    width:179px;
+    height:52px;
+    margin-right: 24px;
+    cursor: pointer;
+
+    :hover{
+        color:red;
+    }
+`
+export const DeleteButton = styled.button`
+    width:179px;
+    height:52px;
+    cursor: pointer;
+
+    :hover{
+       color:red;
+    }
+
+`
