@@ -1,4 +1,4 @@
-import BoardWriteUI from "../../../../components/units/board/write/BoardWrite.presenter"
+import BoardWriteUI from "./BoardWrite.presenter"
 import { useState } from "react"
 import { useMutation } from "@apollo/client"
 import { CREATE_BOARD } from "./BoardWrite.queries"

@@ -8,6 +8,7 @@ const FETCH_PRODUCT =gql`
          name
          detail
          _id
+         price
      }
  }
 `
@@ -29,6 +30,7 @@ export default function ProductRoutingPage(){
             <div>판매자: {data?.fetchProduct.seller}</div>
             <div>상품: {data?.fetchProduct.name}</div>
             <div>내용: {data?.fetchProduct.detail}</div>
+            <div>가격: {data?.fetchProduct.price}</div>
             <button onClick={onClickMoveToEdit}>수정하러 이동하기</button>
         </>
     )
