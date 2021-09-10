@@ -170,6 +170,8 @@ function solution(n){
      return result; 
      
  }
+//split() 문자열을 배열로 저장
+
 
 //11. x만큼 간격이 있는 n개의 숫자
 
@@ -193,4 +195,41 @@ function solution(x, n) {
     
     return array;
     
+}
+
+//12. 문자열 내림차순으로 배치하기
+function solution(s){
+    return s.split("")
+            .sort()
+            .reverse()
+            .join("")
+}
+
+//문자열을 split메소드를 사용하여 배열로 쪼갠다.
+// 예: ['Z', 'b', 'c', 'd', 'e', 'f', 'g']
+// sort메소드로 순차적으로 나열해준다.
+// 예: ["Z", "b", "c", "d", "e", "f", "g"]
+// reverse메소드로 반전시켜준다.
+// 예: ["g", "f", "e", "d", "c", "b", "Z"]
+// join메소드로 문자열로 바꿔줘서 반환한다.
+// 예: "gfedcbZ" 
+
+
+
+//13. k번째 수
+function solution(array, commands) {
+    var answer = [];
+    
+    for( let idx=0; idx < commands.length; idx++){
+        const i = commands[idx][0];
+        const j = commands[idx][1];
+        const k = commands[idx][2];
+        
+        const sliceResult = array.slice(i -1, j)
+                                .sort( (a, b) =>{
+                                return a-b
+                                })
+        answer.push(sliceResult[k -1])
+    }
+    return answer;
 }
