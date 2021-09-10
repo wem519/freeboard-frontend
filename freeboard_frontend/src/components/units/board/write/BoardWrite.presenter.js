@@ -38,7 +38,7 @@ export default function BoardWriteUI(props){
     
     return(
     <Wrapper>  
-        <Title>게시물 등록</Title>
+        <Title>{props.isEdit ? "게시판 수정" : "게시판 등록"}</Title>
         <User>  
             <IdGroup>
                 <IdName>작성자</IdName>
@@ -98,7 +98,11 @@ export default function BoardWriteUI(props){
             <RadioLabel htmlFor="image">사진</RadioLabel>
         </RadioGroup>
         <ButtonGroup>
-            <Summit onClick={props.onClickSignup} aaa={props.aaa}>등록하기</Summit>
+            {!props.isEdit && (
+            <Summit onClick={props.onClickSignup} aaa={props.aaa} >등록하기</Summit>
+            )}
+            {props.isEdit && (
+            <Summit onClick={props.onClickUpdate} aaa={props.aaa}>수정하기</Summit>)}
         </ButtonGroup>
     </Wrapper>
 )

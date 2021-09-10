@@ -1,12 +1,15 @@
 import BoardWriteUI from "./BoardWrite.presenter"
 import { useState } from "react"
 import { useMutation } from "@apollo/client"
-import { CREATE_BOARD } from "./BoardWrite.queries"
-import router from "next/router"
+import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries"
+import { useRouter } from "next/router" 
  
- 
- export default function BoardWrite(){
+ export default function BoardWrite(props){
+    const router = useRouter()
+    
     const [createBoard] = useMutation(CREATE_BOARD)
+    const [updateBoard] = useMutation(UPDATE_BOARD)
+    
     const[name, setName] = useState("")
     const[pwd, setPwd] = useState("")
     const[text, setText]= useState("")
@@ -93,12 +96,41 @@ import router from "next/router"
                 }
             })
             console.log(result.data.createBoard.writer)
-            router.push(`/boards/boards-read/${result.data.createBoard._id}`)
+            router.push(`/boards/${result.data.createBoard._id}`)
         }
-       
     }
 
-    return< BoardWriteUI
+    async function onClickUpdate(){
+    try{     
+       await updateBoard({
+            variables: {
+                boardId: router.query.read,
+                password: pwd,
+                updateBoardInput: {
+                    title: text,
+                    contents: contents,
+                }
+            }
+        });
+        router.push(`/boards/${router.query.read}`) 
+    }catch(error){
+        alert(error)
+    }
+}
+    //     const result = updateBoard({
+    //         variables: {
+    //         boardId: router.query.read,
+    //         password: pwd,
+    //         updateBoardInput: {
+    //             title: text,
+    //             contents: contents,
+    //         }
+    //     }
+    // })
+    // router.push(`/boards/${result.data.updateBoard_id}`) 두가지 모두 값은 값을 출력한다. 
+
+    return (
+    < BoardWriteUI
     onChangeName={onChangeName}
     onChangePwd={onChangePwd}
     onChangeText={onChangeText}
@@ -108,7 +140,11 @@ import router from "next/router"
     pwdError={pwdError}
     textError={textError}
     contentsError={contentsError}
-    aaa={aaa}/>
+    aaa={aaa}
+    isEdit={props.isEdit}
+    onClickUpdate={onClickUpdate}
+    />
+    )
  }   
     
     
