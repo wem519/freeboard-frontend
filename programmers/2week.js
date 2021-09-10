@@ -143,3 +143,54 @@ function solution(n){
     }
     return answer;
 }
+
+//10. 자릿수 더하기
+
+function solution(n)
+{
+    var answer = 0;
+    var m = String(n);
+
+    for(var i=0; i<m.length; i++){
+        answer+=parseInt(m[i]);
+    }
+    return answer;
+}
+
+//다른풀이
+function solution(n){
+    let result = 0;
+     
+     const array = String(n)
+                         .split("")
+                         .forEach( num => {
+                             result = result + Number(num);
+                         })
+     
+     return result; 
+     
+ }
+
+//11. x만큼 간격이 있는 n개의 숫자
+
+function solution(x, n) {
+    let answer = [];
+    
+    for( let i = 1; i <= n; i++ ) {
+        answer.push(i * x);
+    }
+    return answer;
+}
+
+//다른풀이
+function solution(x, n) {
+   
+    const array = new Array(n)
+                    .fill(x)
+                    .map((number, index) => {
+                          return number * (index + 1)
+                    })
+    
+    return array;
+    
+}
