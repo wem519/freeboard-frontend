@@ -167,6 +167,17 @@ export const ListButton = styled.button`
         color:red;
     }
 `
+export const UpdateButton = styled.button`
+    width:179px;
+    height:52px;
+    margin-right: 24px;
+    cursor: pointer;
+
+    :hover{
+       color:red;
+    }
+`
+
 export const DeleteButton = styled.button`
     width:179px;
     height:52px;

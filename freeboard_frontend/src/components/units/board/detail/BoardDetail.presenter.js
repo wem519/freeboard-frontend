@@ -22,7 +22,8 @@ import {
     HateCount,
     FooterWrapper,
     ListButton,
-    DeleteButton
+    DeleteButton,
+    UpdateButton
 } from "../../../../components/units/board/detail/BoardDetail.styles"
 
 export default function BoardDetailUI(props){
@@ -60,6 +61,7 @@ export default function BoardDetailUI(props){
         </Wrapper>
         <FooterWrapper>
             <ListButton onClick={props.onClickMoveToList}>목록으로</ListButton>
+            <UpdateButton onClick={props.onClickMoveToEdit}>수정하기</UpdateButton>
             <DeleteButton 
             // id={props.data?.fetchBoard._id}
             onClick={props.onClickDelete}>삭제하기</DeleteButton>

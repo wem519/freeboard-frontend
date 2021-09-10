@@ -10,7 +10,7 @@ const {data} =useQuery(FETCH_BOARDS)//1번
 
 
 function onClickMoveToBoardDetail(event){
-    router.push(`/boards/boards-read/${event.target.id}`); //3번
+    router.push(`/boards/${event.target.id}`); //3번
 }
 
 function onClickMoveToBoardNew(){
