@@ -1,6 +1,5 @@
-export default function BoardCommentWrite(){
+import BoardCommentWriteUI from "./BoardCommentWrite.presenter";
 
-    return(
-        
-    )
+export default function BoardCommentWrite() {
+  return <BoardCommentWriteUI />;
 }
