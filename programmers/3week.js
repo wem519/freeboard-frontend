@@ -51,3 +51,27 @@ function solution(s) {
     .join(" ");
   return answer;
 }
+
+//3. 자연수 뒤집어 배열
+
+function solution(n) {
+  var arr = n.toString().split("");
+  var answer = [];
+
+  for (var i = arr.length - 1; i >= 0; i--) {
+    answer.push(Number(arr[i]));
+  }
+  return answer;
+}
+
+//4. 나누어 떨어지는 숫자 배열
+
+function solution(arr, divisor) {
+  var answer = [];
+  for (let i = 0; i <= arr.length - 1; i++) {
+    if (arr[i] % divisor === 0) answer.push(arr[i]);
+  }
+  answer.sort((a, b) => a - b);
+  if (answer.length === 0) answer.push(-1);
+  return answer;
+}
