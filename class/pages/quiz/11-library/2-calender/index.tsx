@@ -1,9 +1,16 @@
-import { Calendar, DatePicker } from "antd";
+import { DatePicker, Space } from "antd";
+import { useState } from "react";
 
 export default function Library() {
-  function onPanelChange(value, mode) {
-    console.log(value.format("YYYY-MM-DD"), mode);
+  function onChange(date) {
+    console.log(date);
   }
 
-  return <Calendar onPanelChange={onPanelChange} />;
+  return (
+    <>
+      <Space direction="vertical">
+        <DatePicker onChange={onChange} format="MMMM" picker="month" />
+      </Space>
+    </>
+  );
 }
