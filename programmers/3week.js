@@ -75,3 +75,19 @@ function solution(arr, divisor) {
   if (answer.length === 0) answer.push(-1);
   return answer;
 }
+
+//5. 콜라츠 추측
+
+function solution(num) {
+  var answer = 0;
+  while (num !== 1) {
+    if (answer > 500) {
+      return -1;
+    }
+    num % 2 === 0 ? (num = num / 2) : (num = num * 3 + 1);
+    answer++;
+  }
+  return answer;
+}
+
+//다른 사람 풀이에 있는 이중 삼항 연사자 실행 구조에 대한 이해 필요
