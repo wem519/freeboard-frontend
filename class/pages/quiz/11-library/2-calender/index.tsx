@@ -9,9 +9,8 @@ export default function Library() {
   return (
     <>
       <Space direction="vertical">
-        <DatePicker onChange={onChange} picker="month" format="MMMM" />
+        <DatePicker onChange={onChange} format="MMMM" picker="month" />
       </Space>
-      <div>{onChange}</div>
     </>
   );
 }
