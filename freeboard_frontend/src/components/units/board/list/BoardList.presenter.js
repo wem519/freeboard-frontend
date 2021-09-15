@@ -39,7 +39,7 @@ export default function BoardListUI(props) {
           <Row key={el._id}>
             <ColumnNumber>{index}</ColumnNumber>
             <ColumnTitle id={el._id} onClick={props.onClickMoveToBoardDetail}>
-              {e0l.title}
+              {el.title}
             </ColumnTitle>
             <ColumnWriter>{el.writer}</ColumnWriter>
             <ColumnDate>{el.createdAt}</ColumnDate>
