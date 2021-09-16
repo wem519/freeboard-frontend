@@ -35,7 +35,7 @@ const SidebarWrapper = styled.div`
 
 const Sidebar = styled.div`
   background-color: skyblue;
-  width: 400px;
+  width: 300px;
 `;
 
 const HIDDEN = ["/13-01-layout-hidden"];

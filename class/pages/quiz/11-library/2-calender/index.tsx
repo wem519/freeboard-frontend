@@ -1,16 +1,15 @@
-import { DatePicker, Space } from "antd";
+import { DatePicker } from "antd";
 import { useState } from "react";
 
-export default function Library() {
-  function onChange(date) {
-    console.log(date);
+export default function DatePage() {
+  function onChange(date, dateString) {
+    console.log(date, dateString);
   }
 
   return (
     <>
-      <Space direction="vertical">
-        <DatePicker onChange={onChange} format="MMMM" picker="month" />
-      </Space>
+      <DatePicker onChange={onChange} />
+      <div>{}</div>
     </>
   );
 }
