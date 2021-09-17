@@ -69,9 +69,9 @@ export default function PaginationPractice() {
   }
 
   function onClickRow(event) {
-    // router.push(`/quiz/14-pagination/detail/${event.currentTarget.id}`);
-    // console.log(event.currentTarget.id);
-    alert(event.currentTarget.id);
+    router.push(`/quiz/14-pagination/detail/${event.currentTarget.id}`);
+    console.log(event.currentTarget.id);
+    // alert(event.currentTarget.id);
   }
 
   return (
