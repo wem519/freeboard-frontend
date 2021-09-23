@@ -2,14 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function OpenapiPracticePage() {
-  const [catImage, setCatImage] = useState("");
+  const [dogImage, setDogImage] = useState("");
 
   useEffect(() => {
     async function getImage() {
-      const image = await axios.get(
-        "https://api.thecatapi.com/v1/images/search"
-      );
-      setCatImage(image.data.url);
+      const image = await axios.get("https://dog.ceo/api/breeds/image/random");
+      setDogImage(image.data.message);
     }
     getImage();
   }, []);
@@ -17,7 +15,7 @@ export default function OpenapiPracticePage() {
   return (
     <>
       <div>오픈API</div>
-      <img src={catImage} />
+      <img src={dogImage} />
     </>
   );
 }
