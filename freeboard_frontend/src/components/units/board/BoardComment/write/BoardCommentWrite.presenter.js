@@ -34,7 +34,11 @@ export default function BoardCommentWriteUI(props) {
         <Line></Line>
         <BottomWrapper>
           <BottomLength>0/100</BottomLength>
-          <BottomButton onClick={props.onClickWrite}>등록하기</BottomButton>
+          <BottomButton
+            onClick={props.isEdit ? props.onClickUpdate : props.onClickWrite}
+          >
+            {props.isEdit ? "수정하기" : "등록하기"}
+          </BottomButton>
         </BottomWrapper>
       </ContentsWrapper>
     </Wrapper>

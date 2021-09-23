@@ -1,12 +1,13 @@
 {
-  "name": "freeboard_frontend",
+  "name": "class",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate": "graphql-codegen"
   },
   "dependencies": {
     "@apollo/client": "^3.4.10",
@@ -20,7 +21,9 @@
     "react": "17.0.2",
     "react-daum-postcode": "^2.0.6",
     "react-dom": "17.0.2",
-    "react-player": "^2.9.0"
+    "react-player": "^2.9.0",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.2.0",

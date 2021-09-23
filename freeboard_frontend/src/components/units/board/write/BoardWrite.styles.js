@@ -129,6 +129,7 @@ export const YoutubeText = styled.input`
   width: 996px;
   height: 46px;
   padding: 10px;
+  border: 1px solid #bdbdbd;
 `;
 export const PictureGroup = styled.div`
   width: 996px;

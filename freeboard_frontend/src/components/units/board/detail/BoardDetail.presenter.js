@@ -1,5 +1,4 @@
 import {
-  Address,
   Wrapper,
   Headers,
   Line,
@@ -25,36 +24,45 @@ import {
   DeleteButton,
   UpdateButton,
 } from "../../../../components/units/board/detail/BoardDetail.styles";
+import { Tooltip } from "antd";
 
 export default function BoardDetailUI(props) {
   return (
     <div>
       <Wrapper>
-        <Address />
         <Headers>
           <User src="/user.png" />
           <Manage>
             <Name>{props.data?.fetchBoard.writer}</Name>
-            <Date>Date:2021.02.18</Date>
+            <Date>{props.data?.fetchBoard.createdAt}</Date>
           </Manage>
           <Attach src="/attach.png" />
-          <Location src="/location2.png" />
+          <Tooltip
+            placement="topRight"
+            title={`${props.data?.fetchBoard.boardAddress?.address} ${props.data?.fetchBoard.boardAddress?.addressDetail}`}
+          >
+            <Location src="/location2.png" />
+          </Tooltip>
         </Headers>
         <Line />
         <Title>{props.data?.fetchBoard.title}</Title>
         <BodyWrapper>
           <ImageInput src="/image.png"></ImageInput>
           <TextInput>{props.data?.fetchBoard.contents}</TextInput>
-          <YoutubeInput src="/video.png"></YoutubeInput>
+          <YoutubeInput
+            url={props.data?.fetchBoard.youtubeUrl}
+            width="500px"
+            height="480px;"
+          />
         </BodyWrapper>
         <FeelingWrapper>
           <Feeling>
-            <Good src="/good.png"></Good>
-            <GoodCount>1920</GoodCount>
+            <Good src="/good.png" onClick={props.onClickLike} />
+            <GoodCount>{props.data?.fetchBoard.likeCount}</GoodCount>
           </Feeling>
           <Feeling>
-            <Hate src="/bad.png"></Hate>
-            <HateCount>3920</HateCount>
+            <Hate src="/bad.png" onClick={props.onClickDislike} />
+            <HateCount>{props.data?.fetchBoard.dislikeCount}</HateCount>
           </Feeling>
         </FeelingWrapper>
       </Wrapper>

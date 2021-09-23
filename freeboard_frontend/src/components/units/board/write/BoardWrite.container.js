@@ -14,7 +14,13 @@ export default function BoardWrite(props) {
   const [pwd, setPwd] = useState("");
   const [text, setText] = useState("");
   const [contents, setContents] = useState("");
+  const [youtubeUrl, setYoutubeUrl] = useState("");
+  const [zipcode, setZipcode] = useState("");
+  const [address, setAddress] = useState("");
+  const [addressDetail, setAddressDetail] = useState("");
+
   const [aaa, setAaa] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const [nameError, setNameError] = useState("");
   const [pwdError, setPwdError] = useState("");
@@ -82,6 +88,24 @@ export default function BoardWrite(props) {
     }
   }
 
+  function onChangeYoutubeUrl(event) {
+    setYoutubeUrl(event.target.value);
+  }
+  function onChangeAddressDetail(event) {
+    setAddressDetail(event.target.value);
+  }
+  function onClickAddressSearch() {
+    setIsOpen(true);
+  }
+  function onCompleteAddressSearch(data) {
+    setAddress(data.address);
+    setZipcode(data.zonecode);
+    setIsOpen(false);
+  }
+  function onCancel() {
+    setIsOpen(false);
+  }
+
   async function onClickSignup() {
     if (name === "") {
       setNameError("이름이 없습니다.");
@@ -104,6 +128,12 @@ export default function BoardWrite(props) {
             password: pwd,
             title: text,
             contents: contents,
+            youtubeUrl: youtubeUrl,
+            boardAddress: {
+              zipcode: zipcode,
+              address: address,
+              addressDetail: addressDetail,
+            },
           },
         },
       });
@@ -153,15 +183,23 @@ export default function BoardWrite(props) {
       onChangePwd={onChangePwd}
       onChangeText={onChangeText}
       onChangeContents={onChangeContents}
+      onChangeYoutubeUrl={onChangeYoutubeUrl}
+      onChangeAddressDetail={onChangeAddressDetail}
+      onClickAddressSearch={onClickAddressSearch}
+      onCompleteAddressSearch={onCompleteAddressSearch}
+      onCancel={onCancel}
       onClickSignup={onClickSignup}
       nameError={nameError}
       pwdError={pwdError}
       textError={textError}
       contentsError={contentsError}
       aaa={aaa}
+      isOpen={isOpen}
       isEdit={props.isEdit}
       onClickUpdate={onClickUpdate}
       data={props.data}
+      address={address}
+      zipcode={zipcode}
     />
   );
 }

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { CREATE_BOARD_COMMENT } from "./BoardCommentWrite.queries";
 import { useMutation } from "@apollo/client";
-
+import { FETCH_BOARD_COMMENTS } from "../list/BoardCommentList.queries";
 export default function BoardCommentWrite(props) {
   const router = useRouter();
   const [myWriter, setMyWriter] = useState("");
@@ -37,8 +37,14 @@ export default function BoardCommentWrite(props) {
             contents: myContents,
             rating: myStar,
           },
-          boardId: router.query.read,
+          boardId: String(router.query.read),
         },
+        refetchQueries: [
+          {
+            query: FETCH_BOARD_COMMENTS,
+            variables: { boardId: router.query.read },
+          },
+        ],
       });
       console.log(result.data.createBoardComment);
     } catch (error) {
@@ -54,6 +60,7 @@ export default function BoardCommentWrite(props) {
         onChangeMyContents={onChangeMyContents}
         onChangeStar={onChangeStar}
         onClickWrite={onClickWrite}
+        isEdit={props.isEdit}
       />
     </>
   );

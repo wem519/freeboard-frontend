@@ -113,3 +113,5 @@ function solution(numbers) {
   answer.sort((a, b) => a - b);
   return answer;
 }
+
+//7.정수 제곱급 판별
