@@ -115,3 +115,14 @@ function solution(numbers) {
 }
 
 //7.정수 제곱급 판별
+
+function solution(n) {
+  let result = -1;
+  for (let i = 1; i * i <= n; i++) {
+    if (i * i === n) {
+      result = i + 1;
+      return result * result;
+    }
+  }
+  return result;
+}
