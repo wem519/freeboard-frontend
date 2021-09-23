@@ -34,6 +34,9 @@ const Page = styled.span`
 const Arrow = styled.span`
   cursor: pointer;
   color: red;
+  :hover {
+    background-color: yellow;
+  }
 `;
 
 const Row = styled.div`
