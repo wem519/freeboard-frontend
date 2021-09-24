@@ -12,3 +12,28 @@ function solution(x) {
     return false;
   }
 }
+
+//2. 내적
+
+function solution(a, b) {
+  let result = 0;
+  for (let i = 0; i < a.length; i++) {
+    result += a[i] * b[i];
+    // console.log(b);
+  }
+  return result;
+}
+
+//3. 제일 작은 수 제거하기
+
+function solution(arr) {
+  var answer = [];
+  for (let i = 0; i < arr.length; i++) {}
+  if ((arr.splice(arr.indexOf(Math.min(arr))), 1)) {
+    answer = arr;
+  } else {
+    arr.length <= 1;
+    return [-1];
+  }
+  return answer;
+}
