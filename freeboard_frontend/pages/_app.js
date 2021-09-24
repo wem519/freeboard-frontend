@@ -1,5 +1,6 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import "antd/dist/antd.css";
+
 function MyApp({ Component, pageProps }) {
   const client = new ApolloClient({
     uri: "http://backend03.codebootcamp.co.kr/graphql",
@@ -7,11 +8,9 @@ function MyApp({ Component, pageProps }) {
   });
 
   return (
-    <>
-      <ApolloProvider client={client}>
-        <Component {...pageProps} />
-      </ApolloProvider>
-    </>
+    <ApolloProvider client={client}>
+      <Component {...pageProps} />
+    </ApolloProvider>
   );
 }
 
