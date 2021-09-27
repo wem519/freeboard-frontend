@@ -1,18 +1,25 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export default class Board extends BaseEntity {
-  @PrimaryGeneratedColumn("increment") //PK(Primary key): map의 id와 같은 역할 , 고유한 값을 가지게 함
+export default class Product extends BaseEntity {
+  @PrimaryGeneratedColumn("increment")
   number!: number;
 
-  @Column({ type: "text" })
-  writer!: String;
+  @PrimaryGeneratedColumn("uuid")
+  _id!: String;
 
   @Column({ type: "text" })
-  title!: String;
+  seller!: string;
+
+  @Column({ type: "text" })
+  name!: string;
+
+  @Column({ type: "text" })
+  detail!: string;
 
   @Column({ type: "integer" })
-  age!: number;
+  price!: number;
+
   @Column({ type: "timestamp", default: null, nullable: true })
   deletedAt?: Date;
 }
