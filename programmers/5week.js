@@ -22,3 +22,25 @@ function solution(a, b) {
 
   return answer;
 }
+
+//3. 최대공약수와 최소공배수
+
+function solution(n, m) {
+  let answer = [];
+  const gcdArr = [];
+  //최대공약수 구하기
+  for (let i = 1; i <= m; i++) {
+    // console.log(i)
+    if (n % i === 0 && m % i === 0) {
+      gcdArr.push(i);
+    }
+  }
+  answer[0] = Math.max(...gcdArr);
+  for (let l = m; l <= n * m; l += m) {
+    if (l % n === 0) {
+      answer[1] = l;
+      break;
+    }
+  }
+  return answer;
+}
