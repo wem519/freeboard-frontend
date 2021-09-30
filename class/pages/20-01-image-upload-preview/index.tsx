@@ -29,7 +29,7 @@ export default function ImageUploadPreviewPage() {
   }
   function onChangeFile(event) {
     const file = event.target.files[0];
-    console.log(file);
+    // console.log(file);
     if (!fileValidation(file)) return;
 
     const fileReader = new FileReader();
@@ -97,7 +97,7 @@ export default function ImageUploadPreviewPage() {
       >
         이미지 업로드
       </div>
-      <img src={imageUrl} /*style={{ width: "200px", height: "200px" }} */ />
+      <img src={imageUrl} style={{ width: "200px", height: "200px" }} />
       <input type="file" ref={fileRef} onChange={onChangeFile} />
       <button onClick={onClickSubmit}>게시물 등록하기</button>
     </>
