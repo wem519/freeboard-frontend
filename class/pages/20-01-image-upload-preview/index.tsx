@@ -83,8 +83,8 @@ export default function ImageUploadPreviewPage() {
     // const end = performance.now();
     // console.log(end - start);
 
-    //게시물 등록
-    //createBoard({variables: {
+    // 게시물 등록
+    // createBoard({variables: {
     //  images: [url]
     // }})
     // const url = result.data.uploadFile.url;
