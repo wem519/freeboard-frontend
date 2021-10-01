@@ -18,7 +18,7 @@ import {
   FooterWrapper,
   BoardSummit,
 } from "../list/BoardList.styles";
-
+import Pagination01 from "../../../commons/paginations/Pagination01.container";
 export default function BoardListUI(props) {
   return (
     <Wrapper>
@@ -47,12 +47,11 @@ export default function BoardListUI(props) {
         ))}
       </Board>
       <FooterWrapper>
-        <NumberWrapper>
-          <Previos src="/left.png"></Previos>
-          <Number>1</Number>
-          <Number>2</Number>
-          <Next src="/right.png"></Next>
-        </NumberWrapper>
+        <Pagination01
+          refetch={props.refetch}
+          startPage={props.startPage}
+          setStartPage={props.setStartPage}
+        />
         <BoardSummit onClick={props.onClickMoveToBoardNew}>
           게시물 등록하기
         </BoardSummit>
