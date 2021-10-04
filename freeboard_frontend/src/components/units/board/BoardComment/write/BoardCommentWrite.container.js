@@ -1,7 +1,10 @@
 import BoardCommentWriteUI from "./BoardCommentWrite.presenter";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { CREATE_BOARD_COMMENT } from "./BoardCommentWrite.queries";
+import {
+  CREATE_BOARD_COMMENT,
+  UPDATE_BOARD_COMMENT,
+} from "./BoardCommentWrite.queries";
 import { useMutation } from "@apollo/client";
 import { FETCH_BOARD_COMMENTS } from "../list/BoardCommentList.queries";
 export default function BoardCommentWrite(props) {
@@ -12,6 +15,7 @@ export default function BoardCommentWrite(props) {
   const [myStar, setMyStar] = useState(0);
 
   const [createBoardComment] = useMutation(CREATE_BOARD_COMMENT);
+  const [updateBoardComment] = useMutation(UPDATE_BOARD_COMMENT);
 
   function onChangeMyWiter(event) {
     setMyWriter(event.target.value);
@@ -51,6 +55,37 @@ export default function BoardCommentWrite(props) {
       alert(error);
     }
   }
+  async function onClickUpdate(event) {
+    event.target.id;
+    if (!myContents) {
+      alert("내용이 수정되지 않았습니다");
+      return;
+    }
+    if (!myPassWord) {
+      alert("비밀번호가 입력되지 않았습니다.");
+      return;
+    }
+
+    try {
+      await updateBoardComment({
+        variables: {
+          updateBoardCommentInput: {
+            contents: myContents,
+          },
+          password: myPassWord,
+          boardCommentId: event.target.id,
+        },
+        refetchQueries: [
+          {
+            query: FETCH_BOARD_COMMENTS,
+            variables: { boardId: router.query.read },
+          },
+        ],
+      });
+    } catch (error) {
+      alert(error.message);
+    }
+  }
 
   return (
     <>
@@ -60,7 +95,9 @@ export default function BoardCommentWrite(props) {
         onChangeMyContents={onChangeMyContents}
         onChangeStar={onChangeStar}
         onClickWrite={onClickWrite}
+        onClickUpdate={onClickUpdate}
         isEdit={props.isEdit}
+        el={props.el}
       />
     </>
   );

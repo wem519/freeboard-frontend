@@ -24,7 +24,8 @@ export const SearchTitle = styled.input`
 export const SearchDate = styled.div`
   width: 244px;
   height: 52px;
-  background-color: blue;
+  /* background-color: blue; */
+  border: 1px solid black;
 `;
 export const SearchButton = styled.button`
   width: 94px;

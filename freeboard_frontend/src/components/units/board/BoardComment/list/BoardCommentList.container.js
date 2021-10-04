@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { FETCH_BOARD_COMMENTS } from "./BoardCommentList.queries";
 import BoardCommentListUI from "./BoardCommentList.presenter";
+import { useState } from "react";
 
 export default function BoardCommentList() {
   const router = useRouter();
