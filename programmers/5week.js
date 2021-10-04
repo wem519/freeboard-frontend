@@ -71,3 +71,31 @@ function solution(participant, completion) {
 //   }
 
 // }
+
+//모의고사
+
+const answerTable = [
+  [1, 2, 3, 4, 5],
+  [2, 1, 2, 3, 2, 4, 2, 5],
+  [3, 3, 1, 1, 2, 2, 4, 4, 5, 5],
+];
+function solution(answers) {
+  const score = [0, 0, 0];
+
+  for (let i = 0; i < answers.length; i++) {
+    for (let l = 0; l < answerTable.length; l++) {
+      if (answerTable[l][i % answerTable[l].length] === answers[i]) {
+        score[l]++;
+      }
+    }
+  }
+  const biggest = Math.max(...score);
+  const result = [];
+
+  for (let i = 0; i < score.length; i++) {
+    if (biggest === score[i]) {
+      result.push(i + 1);
+    }
+  }
+  return result;
+}
