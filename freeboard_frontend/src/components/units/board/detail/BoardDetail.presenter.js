@@ -52,7 +52,7 @@ export default function BoardDetailUI(props) {
           <YoutubeInput
             url={props.data?.fetchBoard.youtubeUrl}
             width="500px"
-            height="480px;"
+            height="480px"
           />
         </BodyWrapper>
         <FeelingWrapper>

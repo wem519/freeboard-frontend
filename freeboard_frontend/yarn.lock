@@ -3717,6 +3717,11 @@ indent-string@^3.0.0:
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz#4a5fd6d27cc332f37e5419a504dbb837105c9289"
   integrity sha1-Sl/W0nzDMvN+VBmlBNu4NxBckok=
 
+infinite-scroller@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/infinite-scroller/-/infinite-scroller-0.0.11.tgz#0dafbd51f03a3a23610ff163f2c05a0871e3a4f8"
+  integrity sha1-Da+9UfA6OiNhD/Fj8sBaCHHjpPg=
+
 inflight@^1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
