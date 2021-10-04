@@ -29,6 +29,8 @@ export default function BoardList() {
       onClickMoveToBoardDetail={onClickMoveToBoardDetail}
       onClickMoveToBoardNew={onClickMoveToBoardNew}
       startPage={startPage}
+      count={dataBoardCount?.fetchBoardsCount}
+      setStartPage={setStartPage}
       refetch={refetch}
     />
   );

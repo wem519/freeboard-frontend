@@ -18,7 +18,7 @@ import {
   FooterWrapper,
   BoardSummit,
 } from "../list/BoardList.styles";
-import Pagination01 from "../../../commons/paginations/Pagination01.container";
+import Pagination01 from "../../../commons/paginations/01/Pagination01.container";
 export default function BoardListUI(props) {
   return (
     <Wrapper>
@@ -51,7 +51,9 @@ export default function BoardListUI(props) {
           refetch={props.refetch}
           startPage={props.startPage}
           setStartPage={props.setStartPage}
+          count={props.count}
         />
+
         <BoardSummit onClick={props.onClickMoveToBoardNew}>
           게시물 등록하기
         </BoardSummit>
