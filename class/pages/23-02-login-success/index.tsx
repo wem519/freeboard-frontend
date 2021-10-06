@@ -7,7 +7,6 @@ const FETCH_USER_LOGGED_IN = gql`
     fetchUserLoggedIn {
       name
       email
-      picture
     }
   }
 `;
@@ -20,11 +19,11 @@ export default function SuccessPage() {
     setUserInfo({
       email: data?.fetchUserLoggedIn.email,
       name: data?.fetchUserLoggedIn.name,
-      picture: data?.fetchUserLoggedIn.picture,
+      // picture: data?.fetchUserLoggedIn.picture,
     });
   }, [data]);
-
-  console.log(userInfo);
+  console.log(data?.fetchUserLoggedIn.email);
+  // console.log(userInfo);
   return (
     <>
       <div>로그인에 성공하셨습니다</div>
