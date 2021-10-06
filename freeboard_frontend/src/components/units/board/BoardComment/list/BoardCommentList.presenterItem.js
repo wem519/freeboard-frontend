@@ -56,11 +56,19 @@ export default function BoardCommentListUIItem(props) {
   function onChangeDeletePassword(event) {
     setMyPassword(event.target.value);
   }
+  function onCancel() {
+    setIsOpenDeleteModal(false);
+  }
 
   return (
     <>
       {isOpenDeleteModal && (
-        <Modal visible={true} onOk={onClickDelete}>
+        <Modal
+          visible={true}
+          onOk={onClickDelete}
+          onCancel={onCancel}
+          autoClose
+        >
           <div>비밀번호 입력: </div>
           <input type="password" onChange={onChangeDeletePassword} />
         </Modal>

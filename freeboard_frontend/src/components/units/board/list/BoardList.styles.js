@@ -44,6 +44,9 @@ export const Row = styled.div`
   height: 52px;
   line-height: 52px;
 `;
+export const TextToken = styled.span`
+  color: ${(props) => (props.isMatched ? "red" : "black")};
+`;
 export const ColumnNumber = styled.div`
   width: 10%;
   text-align: center;

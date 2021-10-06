@@ -7,7 +7,7 @@ export const globalStyles = css`
   }
 
   @font-face {
-    font-family: "live";
-    src: url("/fonts/scifibit.ttf");
-  }
+    font-family: 'SangSangRock';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SangSangRockOTF.woff') format('woff');
+
 `;

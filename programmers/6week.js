@@ -13,4 +13,5 @@ function solution(nums) {
   }
   return pocket.length;
 }
-ㅊㅇ;
+
+// 피보나치 수

@@ -82,6 +82,7 @@ export default function BoardCommentWrite(props) {
           },
         ],
       });
+      props.setIsEdit(false);
     } catch (error) {
       alert(error.message);
     }

@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function LayoutBannerUI() {
   const settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     arrows: true,
     speed: 500,
