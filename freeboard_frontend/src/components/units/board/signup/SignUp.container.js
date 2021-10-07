@@ -1,9 +1,9 @@
-import SignUpUI from "./SignUp.presenter";
+import SignupUI from "./SignUp.presenter";
 
 export default function SignUpPage() {
   return (
     <>
-      <SignupUi />
+      <SignupUI />
     </>
   );
 }

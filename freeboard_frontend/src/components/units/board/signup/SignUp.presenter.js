@@ -1,6 +1,6 @@
 import { Wrapper } from "./Signup.styles";
 
-export default function SignUpUI() {
+export default function SignupUI() {
   return (
     <Wrapper>
       <div></div>

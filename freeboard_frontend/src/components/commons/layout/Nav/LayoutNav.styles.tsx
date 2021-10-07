@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
+  width: 1200px;
   height: 64px;
   background-color: black;
   display: flex;
@@ -9,6 +10,7 @@ export const Wrapper = styled.div`
   align-items: center;
   font-size: 18px;
   color: white;
+  margin: auto;
 `;
 export const MenuItem = styled.div`
   margin: 0px 70px;

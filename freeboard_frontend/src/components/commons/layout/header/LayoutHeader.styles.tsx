@@ -1,21 +1,22 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
+  width: 1200px;
   height: 100px;
+  margin: auto;
   background-color: gray;
   display: flex;
   flex-direction: row;
   justify-content: center;
   /* align-items: center; */
-  font-family: 'SangSangRock'
-  }
+  font-family: "SangSangRock";
 `;
 
 export const InnerWrapper = styled.div`
   width: 1200px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   font-size: 40px;
 `;

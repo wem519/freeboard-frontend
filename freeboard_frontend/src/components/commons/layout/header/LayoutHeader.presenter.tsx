@@ -13,7 +13,7 @@ export default function LayoutHeaderUI(props) {
         <InnerWrapper>
           <InnerLogo onClick={props.onClickLogo}>LIVE</InnerLogo>
           <InnerButton onClick={props.onClickMoveToLogin}>로그인</InnerButton>
-          <InnerButton>회원가입</InnerButton>
+          <InnerButton onClick={props.onClickSignup}>회원가입</InnerButton>
         </InnerWrapper>
       </Wrapper>
     </>
