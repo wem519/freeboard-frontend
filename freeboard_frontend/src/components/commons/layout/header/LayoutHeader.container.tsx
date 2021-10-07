@@ -10,10 +10,10 @@ export default function LayoutHeader() {
     return "aaa";
   }
   function onClickMoveToLogin() {
-    router.push("/login");
+    router.push("/sign");
   }
   function onClickSignup() {
-    router.push("/signup");
+    router.push("");
   }
 
   return (
