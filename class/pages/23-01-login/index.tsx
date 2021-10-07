@@ -32,7 +32,7 @@ export default function LoginPage() {
         password: myPassword,
       },
     });
-    console.log(result.data?.loginUser.accessToken);
+    // console.log(result.data?.loginUser.accessToken);
     localStorage.setItem("accessToken", result.data?.loginUser.accessToken);
     setAccessToken(result.data?.loginUser.accessToken);
     router.push("/23-02-login-success");

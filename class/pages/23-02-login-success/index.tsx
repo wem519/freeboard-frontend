@@ -23,6 +23,7 @@ export default function SuccessPage() {
     });
   }, [data]);
   console.log(data?.fetchUserLoggedIn.email);
+  console.log("email", data?.fetchUserLoggedIn.email);
   // console.log(userInfo);
   return (
     <>
