@@ -25,6 +25,8 @@ function solution(n) {
 
 // 어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다. 예를 들어 "AB"는 1만큼 밀면 "BC"가 되고, 3만큼 밀면 "DE"가 됩니다. "z"는 1만큼 밀면 "a"가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요.
 
+// 시저함수
+
 function solution(s, n) {
   const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const lower = "abcdefghijklmnopqrstuvwxyz";
@@ -50,5 +52,33 @@ function solution(s, n) {
     answer += upperOrLower[index];
   }
 
+  return answer;
+}
+
+// 체육복
+
+function solution(n, lost, reserve) {
+  const losted = [...lost];
+  lost = lost
+    .filter((student) => !reserve.includes(student))
+    .sort((a, b) => a - b);
+  reserve = reserve
+    .filter((student) => !losted.includes(student))
+    .sort((a, b) => a - b);
+  let answer = n - lost.length;
+
+  for (let i = 0; i < lost.length; i++) {
+    const student = lost[i];
+    // console.log(student)
+
+    if (reserve.includes(student - 1)) {
+      reserve.splice(reserve.indexOf(student - 1), 1);
+      answer++;
+    } else if (reserve.includes(student + 1)) {
+      reserve.splice(reserve.indexOf(student + 1), 1);
+      answer++;
+    }
+    // console.log(reserve)
+  }
   return answer;
 }
