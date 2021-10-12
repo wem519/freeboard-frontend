@@ -15,9 +15,7 @@ export default function MyFormUI(props) {
         name="로그인하기"
         type="submit"
         isValid={props.formState.isValid}
-      >
-        로그인하기
-      </Button01>
+      ></Button01>
       {/* <button onClick={onClickLogin}>로그인하기</button> */}
     </form>
   );
