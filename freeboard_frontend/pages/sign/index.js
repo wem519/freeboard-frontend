@@ -1,4 +1,4 @@
-import SignInPage from "../../src/components/units/board/signin/SignIn.container";
+import SignInPage from "../../src/components/commons/signin/SignIn.container";
 
 export default function Sign() {
   return <SignInPage />;
