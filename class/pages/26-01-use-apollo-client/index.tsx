@@ -1,5 +1,4 @@
 import { gql, useApolloClient, useMutation } from "@apollo/client";
-import axios from "axios";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { GlobalContext } from "../_app";
