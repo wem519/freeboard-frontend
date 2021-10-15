@@ -12,6 +12,7 @@ import { globalStyles } from "../src/commons/styles/globalStyles";
 import { initializeApp } from "firebase/app";
 import { createUploadLink } from "apollo-upload-client";
 import { createContext, useEffect, useState } from "react";
+import Head from "next/head";
 
 export const firebaseApp = initializeApp({
   apiKey: "AIzaSyC_p2L5Smhcp01N-L9mGMgIBeClAMQm5Qk",
