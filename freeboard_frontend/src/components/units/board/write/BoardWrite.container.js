@@ -101,6 +101,7 @@ export default function BoardWrite(props) {
     setAddress(data.address);
     setZipcode(data.zonecode);
     setIsOpen(false);
+    console.log("address", data);
   }
   function onCancel() {
     setIsOpen(false);

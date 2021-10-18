@@ -19,7 +19,8 @@ function MyApp({ Component, pageProps }) {
   const value = {
     accessToken: accessToken,
     setAccessToken: setAccessToken,
-    userInfo: setUserInfo,
+    userInfo: userInfo,
+    setUserInfo: setUserInfo,
   };
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken") || "";

@@ -18,7 +18,7 @@ export const InnerWrapper = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  font-size: 40px;
+  font-size: 30px;
 `;
 
 export const InnerLogo = styled.div`

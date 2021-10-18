@@ -1,7 +1,5 @@
+import ProductList from "../../src/components/units/market/list/ProductList.container";
+
 export default function MarketPage() {
-  return (
-    <>
-      <div>마켓페이지</div>
-    </>
-  );
+  return <ProductList />;
 }

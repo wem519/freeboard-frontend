@@ -1,4 +1,3 @@
-import { OmitProps } from "antd/lib/transfer/ListBody";
 import {
   Wrapper,
   InnerWrapper,
@@ -12,8 +11,15 @@ export default function LayoutHeaderUI(props) {
       <Wrapper>
         <InnerWrapper>
           <InnerLogo onClick={props.onClickLogo}>LIVE</InnerLogo>
-          <InnerButton onClick={props.onClickMoveToLogin}>로그인</InnerButton>
-          <InnerButton onClick={props.onClickSignup}>회원가입</InnerButton>
+          {props.accessToken && `${props.userInfo.name}`}
+          {props.accessToken ? (
+            <InnerButton onClick={props.onClickLogout}>로그아웃</InnerButton>
+          ) : (
+            <InnerButton onClick={props.onClickMoveToLogin}>로그인</InnerButton>
+          )}
+          {!props.accessToken && (
+            <InnerButton onClick={props.onClickSignup}>회원가입</InnerButton>
+          )}
         </InnerWrapper>
       </Wrapper>
     </>
