@@ -40,7 +40,7 @@ export default function BasketPage() {
   };
 
   function onClickLogin() {
-    alert("로그인에 성고하였습니다");
+    alert("로그인에 성공하였습니다");
     const baskets = JSON.parse(localStorage.getItem("baskets")) || [];
     if (baskets.length) {
       const result = confirm(
