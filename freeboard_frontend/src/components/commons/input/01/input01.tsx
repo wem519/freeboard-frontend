@@ -12,7 +12,7 @@ const Label = styled.label`
 const Input = styled.input`
   width: 996px;
   height: 52px;
-  margin-top: 30px;
+  margin-top: 16px;
 `;
 
 export default function Input01(props) {

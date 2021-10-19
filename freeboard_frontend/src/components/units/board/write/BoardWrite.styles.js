@@ -177,7 +177,7 @@ export const ButtonGroup = styled.div`
 export const Summit = styled.button`
   width: 179px;
   height: 52px;
-  background-color: ${(props) => (props.aaa === true ? "#ffd600" : "grey")};
+  background-color: ${(props) => (props.aaa === true ? "#ffd600" : "gray")};
   border: none;
   font-size: 16px;
   margin-left: 12px;
