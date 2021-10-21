@@ -26,7 +26,9 @@ function solution(n, arr1, arr2) {
         answer[i][l] = " ";
       }
     }
-    // answer[i] = answer[i].join("")
+    answer[i] = answer[i].join("");
   }
   return answer;
 }
+
+//
