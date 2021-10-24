@@ -16,6 +16,10 @@ export default function ProductList() {
   function onClickToWrite() {
     router.push("/markets/new");
   }
+  function onClickMoveTodetail(event) {
+    router.push(`/markets/${event.currentTarget.id}`);
+  }
+  console.log(data);
 
   return (
     <>
@@ -23,6 +27,7 @@ export default function ProductList() {
         data={data}
         onClickToWrite={onClickToWrite}
         bestItems={bestItems}
+        onClickMoveTodetail={onClickMoveTodetail}
       />
     </>
   );

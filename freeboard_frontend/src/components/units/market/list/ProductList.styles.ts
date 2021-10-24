@@ -43,6 +43,7 @@ export const BestName = styled.div`
 `;
 export const BestRemarks = styled.div`
   font-size: 12px;
+  color: #4f4f4f;
 `;
 export const BestPrice = styled.div`
   font-size: 18px;
@@ -87,6 +88,7 @@ export const ProductRow = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  cursor: pointer;
 `;
 export const Line = styled.div`
   width: 1200px;
@@ -130,4 +132,7 @@ export const Submit = styled.button`
   display: block;
   float: right;
   margin-top: 40px;
+  cursor: pointer;
+  width: 179px;
+  height: 52px;
 `;

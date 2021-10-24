@@ -36,13 +36,18 @@ export default function ProductListUI(props) {
       <Title>베스트 상품</Title>
       <BestWrapper>
         {props.bestItems?.fetchUseditemsOfTheBest.map((el) => (
-          <BestBox key={el._id}>
+          <BestBox key={el._id} onClick={props.onClickMoveTodetail} id={el._id}>
             <BestImg src={`https://storage.googleapis.com/${el?.images[0]}`} />
             <BestProduct>
               <BestProduct2>
                 <BestName>{el.name}</BestName>
                 <BestRemarks>{el.remarks}</BestRemarks>
-                <BestPrice>{el.price}</BestPrice>
+                <BestPrice>
+                  {el.price.toLocaleString("ko-KR", {
+                    style: "currency",
+                    currency: "KRW",
+                  })}
+                </BestPrice>
               </BestProduct2>
               <ChoiceWrapper>
                 <ChoiceImg />
@@ -67,7 +72,11 @@ export default function ProductListUI(props) {
       </div>
       <ProductListWrapper>
         {props.data?.fetchUseditems.map((el) => (
-          <ProductRow key={el._id}>
+          <ProductRow
+            key={el._id}
+            id={el._id}
+            onClick={props.onClickMoveTodetail}
+          >
             <Line />
             <ProductBody>
               <ProductInfoWrapper>
@@ -90,13 +99,20 @@ export default function ProductListUI(props) {
               </ProductInfoWrapper>
               <ProductPriceWrapper>
                 <img />
-                <div>{el.price}</div>
+                <div>
+                  {" "}
+                  {el.price.toLocaleString("ko-KR", {
+                    style: "currency",
+                    currency: "KRW",
+                  })}
+                </div>
               </ProductPriceWrapper>
             </ProductBody>
           </ProductRow>
         ))}
       </ProductListWrapper>
-      <Submit>상품 등록하기</Submit>
+
+      <Submit onClick={props.onClickToWrite}>상품 등록하기</Submit>
     </Wrapper>
   );
 }
