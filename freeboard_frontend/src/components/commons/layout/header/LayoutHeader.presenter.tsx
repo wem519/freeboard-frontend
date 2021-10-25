@@ -11,7 +11,7 @@ export default function LayoutHeaderUI(props) {
       <Wrapper>
         <InnerWrapper>
           <InnerLogo onClick={props.onClickLogo}>LIVE</InnerLogo>
-          {props.accessToken && `${props.userInfo.name}`}
+          {props.accessToken && props.data?.fetchUserLoggedIn.name}
           {props.accessToken ? (
             <InnerButton onClick={props.onClickLogout}>로그아웃</InnerButton>
           ) : (

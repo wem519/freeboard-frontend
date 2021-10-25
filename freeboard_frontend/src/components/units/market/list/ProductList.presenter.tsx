@@ -64,9 +64,16 @@ export default function ProductListUI(props) {
             <Sold>판매된상품</Sold>
           </Sales>
           <div>
-            <input />
-            <input />
-            <button>검색</button>
+            <input style={{ width: "282px", height: "52px" }} />
+            <input
+              style={{ marginLeft: "20px", width: "282px", height: "52px" }}
+            />
+
+            <button
+              style={{ marginLeft: "20px", width: "78px", height: "52px" }}
+            >
+              검색
+            </button>
           </div>
         </SearchBar>
       </div>
@@ -87,24 +94,26 @@ export default function ProductListUI(props) {
                 <ProductInfo>
                   <ProductName>{el.name}</ProductName>
                   <ProductRemarks>{el.reamrks}</ProductRemarks>
-                  <ProductTag>{el.tags}</ProductTag>
+                  <ProductTag>
+                    {el.tags.length ? el.tags.map((el) => `#${el}`) : "#"}
+                  </ProductTag>
 
                   <ProductInfoFooter>
                     <img />
                     <div>{el.seller?.name}</div>
                     <img />
-                    <div>{el.pickedCount}</div>
+                    <div style={{ color: "gray" }}>{el.pickedCount}</div>
                   </ProductInfoFooter>
                 </ProductInfo>
               </ProductInfoWrapper>
               <ProductPriceWrapper>
                 <img />
                 <div>
-                  {" "}
                   {el.price.toLocaleString("ko-KR", {
                     style: "currency",
                     currency: "KRW",
                   })}
+                  원
                 </div>
               </ProductPriceWrapper>
             </ProductBody>

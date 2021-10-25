@@ -85,7 +85,6 @@ export const RadioLabel = styled.label`
 export const Submit = styled.button`
   width: 179px;
   height: 52px;
-  background-color: ${(props) => (props.aaa ? "#ffd600" : "#bdbdbd")};
   font-size: 16px;
   margin-top: 80px;
   cursor: pointer;

@@ -1,13 +1,22 @@
 import { Wrapper } from "./SignIn.styles";
+import Error01 from "../errors/01/error01";
 
 export default function SignInUI(props) {
   return (
     <>
       <Wrapper>
         <form onSubmit={props.handleSubmit(props.onClickSignin)}>
-          아이디: <input type="text" {...props.register("myEmail")} />
+          아이디:
+          <input name="이메일" type="text" {...props.register("email")} />
+          <Error01 value={props.formState.errors.email?.message} />
           <br />
-          비밀번호: <input type="password" {...props.register("myPwd")} />
+          비밀번호:
+          <input
+            name="비밀번호"
+            type="password"
+            {...props.register("password")}
+          />
+          <Error01 value={props.formState.errors.password?.message} />
           <br />
           <button type="submit">로그인</button>
         </form>

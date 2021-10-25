@@ -1,10 +1,11 @@
 import SignInUI from "./SignIn.presenter";
 import { useContext } from "react";
-import { gql, useMutation, useApolloClient } from "@apollo/client";
-import { Wrapper } from "./SignIn.styles";
+import { gql, useMutation } from "@apollo/client";
 import { GlobalContext } from "../../../../pages/_app";
 import { useForm } from "react-hook-form";
-import router from "next/router";
+import { useRouter } from "next/router";
+import { schema } from "../../../commons/libraries/validation";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const LOGIN_USER = gql`
   mutation loginUser($email: String!, $password: String!) {
@@ -14,47 +15,43 @@ const LOGIN_USER = gql`
   }
 `;
 
-const FETCH_USER_LOGGED_IN = gql`
-  query fetchUserLoggedIn {
-    fetchUserLoggedIn {
-      email
-      name
-    }
-  }
-`;
-
 export default function SignInPage() {
-  const { setAccessToken, setUserInfo, userInfo } = useContext(GlobalContext);
-  const { handleSubmit, register } = useForm();
+  const router = useRouter();
+  const { setAccessToken, setUserInfo } = useContext(GlobalContext);
+  const { handleSubmit, register, formState } = useForm({
+    mode: "onChange",
+    resolver: yupResolver(schema),
+  });
   const [loginUser] = useMutation(LOGIN_USER);
-
-  const client = useApolloClient();
 
   async function onClickSignin(data) {
     const result = await loginUser({
       variables: {
-        email: data.myEmail,
-        password: data.myPwd,
+        email: data.email,
+        password: data.password,
       },
     });
-    const accessToken = result.data?.loginUser.accessToken;
-    localStorage.setItem("accessToken", result.data?.loginUser.accessToken);
+    // const accessToken = result.data?.loginUser.accessToken;
+    // localStorage.setItem("accessToken", result.data?.loginUser.accessToken);
+
     setAccessToken(result.data?.loginUser.accessToken);
+    localStorage.setItem("refreshToken", "true");
+    router.push("/markets");
     // console.log(accessToken);
 
-    const resultUserInfo = await client.query({
-      query: FETCH_USER_LOGGED_IN,
-      context: {
-        headers: {
-          authorization: `Bearer ${accessToken}`,
-        },
-      },
-    });
-    const userInfo = resultUserInfo.data.fetchUserLoggedIn;
-    setAccessToken(accessToken);
-    setUserInfo(userInfo);
-    router.push("/markets");
-    console.log(userInfo);
+    // const resultUserInfo = await client.query({
+    //   query: FETCH_USER_LOGGED_IN,
+    //   context: {
+    //     headers: {
+    //       authorization: `Bearer ${accessToken}`,
+    //     },
+    //   },
+    // });
+    // const userInfo = resultUserInfo.data.fetchUserLoggedIn;
+    // setAccessToken(accessToken);
+    // setUserInfo(userInfo);
+    // router.push("/markets");
+    // console.log(userInfo);
 
     // localStorage.setItem("accessToken", result.data?.loginUser.accessToken);
     // setAccessToken(result.data?.loginUser.accessToken);
@@ -68,6 +65,7 @@ export default function SignInPage() {
         handleSubmit={handleSubmit}
         register={register}
         onClickSignin={onClickSignin}
+        formState={formState}
       />
     </>
   );

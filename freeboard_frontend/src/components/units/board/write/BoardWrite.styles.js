@@ -137,6 +137,7 @@ export const PictureGroup = styled.div`
 `;
 export const PictureName = styled.div`
   font-size: 16px;
+  margin-bottom: 10px;
 `;
 
 export const Upload = styled.button`

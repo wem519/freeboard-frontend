@@ -1,7 +1,7 @@
 import BoardWriteUI from "./BoardWrite.presenter";
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries";
+import { CREATE_BOARD, UPDATE_BOARD, UPLOAD_FILE } from "./BoardWrite.queries";
 import { useRouter } from "next/router";
 
 export default function BoardWrite(props) {
@@ -9,6 +9,7 @@ export default function BoardWrite(props) {
 
   const [createBoard] = useMutation(CREATE_BOARD);
   const [updateBoard] = useMutation(UPDATE_BOARD);
+  const [uploadFile] = useMutation(UPLOAD_FILE);
 
   const [name, setName] = useState("");
   const [pwd, setPwd] = useState("");
@@ -18,6 +19,8 @@ export default function BoardWrite(props) {
   const [zipcode, setZipcode] = useState("");
   const [address, setAddress] = useState("");
   const [addressDetail, setAddressDetail] = useState("");
+
+  const [files, setFiles] = useState([null, null, null]);
 
   const [aaa, setAaa] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -122,24 +125,35 @@ export default function BoardWrite(props) {
     }
 
     if (name !== "" && pwd !== "" && text !== "" && contents !== "") {
-      const result = await createBoard({
-        variables: {
-          createBoardInput: {
-            writer: name,
-            password: pwd,
-            title: text,
-            contents: contents,
-            youtubeUrl: youtubeUrl,
-            boardAddress: {
-              zipcode: zipcode,
-              address: address,
-              addressDetail: addressDetail,
+      try {
+        const uploadFiles = files.map((el) =>
+          el ? uploadFile({ variables: { file: el } }) : null
+        );
+
+        const results = await Promise.all(uploadFiles);
+        const myImages = results.map((el) => el?.data.uploadFile.url || "");
+        const result = await createBoard({
+          variables: {
+            createBoardInput: {
+              writer: name,
+              password: pwd,
+              title: text,
+              contents: contents,
+              youtubeUrl: youtubeUrl,
+              boardAddress: {
+                zipcode: zipcode,
+                address: address,
+                addressDetail: addressDetail,
+              },
+              images: myImages,
             },
           },
-        },
-      });
-      console.log(result.data.createBoard.writer);
-      router.push(`/boards/${result.data.createBoard._id}`);
+        });
+        console.log(result.data.createBoard.writer);
+        router.push(`/boards/${result.data.createBoard._id}`);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
@@ -148,23 +162,48 @@ export default function BoardWrite(props) {
       alert("수정내용이 없습니다");
       return;
     }
+    const myUpdateboardInput = {};
+    if (text) myUpdateboardInput.title = text;
+    if (contents) myUpdateboardInput.contents = contents;
+    if (youtubeUrl) myUpdateboardInput.youtubeUrl = youtubeUrl;
+    if (zipcode || address || addressDetail) {
+      myUpdateboardInput.boardAddress = {};
+      if (zipcode) myUpdateboardInput.boardAddress.zipcode = zipcode;
+      if (address) myUpdateboardInput.boardAddress.address = address;
+      if (addressDetail)
+        myUpdateboardInput.boardAddress.addressDetail = addressDetail;
+    }
 
-    try {
-      const myVariables = {
+    const uploadFiles = files.map((el) =>
+      el ? uploadFile({ variables: { file: el } }) : null
+    );
+    const results = await Promise.all(uploadFiles);
+    const nextImages = results.map((el) => el?.data.uploadFile.url || "");
+    myUpdateboardInput.images = nextImages;
+
+    if (props.data?.fetchBoard.images?.length) {
+      const prevImages = [...props.data?.fetchBoard.images];
+      myUpdateboardInput.images = prevImages.map(
+        (el, index) => nextImages[index] || el
+      );
+    } else {
+      myUpdateboardInput.images = nextImages;
+    }
+
+    await updateBoard({
+      variables: {
         boardId: router.query.read,
         password: pwd,
-        updateBoardInput: {},
-      };
-      if (text) myVariables.updateBoardInput.title = text;
-      if (contents) myVariables.updateBoardInput.contents = contents;
+        updateBoardInput: myUpdateboardInput,
+      },
+    });
+    router.push(`/boards/${router.query.read}`);
+  }
 
-      await updateBoard({
-        variables: myVariables,
-      });
-      router.push(`/boards/${router.query.read}`);
-    } catch (error) {
-      alert(error);
-    }
+  function onChangeFiles(file, index) {
+    const newFiles = [...files];
+    newFiles[index] = file;
+    setFiles(newFiles);
   }
   //     const result = updateBoard({
   //         variables: {
@@ -201,6 +240,7 @@ export default function BoardWrite(props) {
       data={props.data}
       address={address}
       zipcode={zipcode}
+      onChangeFiles={onChangeFiles}
     />
   );
 }

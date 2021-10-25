@@ -70,6 +70,7 @@ export const SearchBar = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-top: 80px;
+  align-items: center;
 `;
 export const Sales = styled.div`
   display: flex;
@@ -120,7 +121,10 @@ export const ProductTag = styled.div`
   margin-top: 8px;
 `;
 export const ProductInfoFooter = styled.div`
+  width: 40px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   margin-top: 25px;
 `;
 export const ProductPriceWrapper = styled.div`

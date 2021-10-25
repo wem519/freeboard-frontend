@@ -47,7 +47,14 @@ export default function BoardDetailUI(props) {
         <Line />
         <Title>{props.data?.fetchBoard.title}</Title>
         <BodyWrapper>
-          <ImageInput src="/image.png"></ImageInput>
+          {props.data?.fetchBoard.images
+            ?.filter((el) => el)
+            .map((el) => (
+              <ImageInput
+                key={el}
+                src={`https://storage.googleapis.com/${el}`}
+              />
+            ))}
           <TextInput>{props.data?.fetchBoard.contents}</TextInput>
           <YoutubeInput
             url={props.data?.fetchBoard.youtubeUrl}

@@ -72,7 +72,7 @@ export const Title = styled.div`
 `;
 export const BodyWrapper = styled.div`
   width: 1200px;
-  height: 1000px;
+  /* height: 1000px; */
   /* background-color: green; */
   display: flex;
   flex-direction: column;

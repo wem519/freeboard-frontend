@@ -19,7 +19,11 @@ export default function Input01(props) {
   return (
     <Wrapper>
       <Label>{props.name}</Label>
-      <Input type={props.type} />
+      <Input
+        type={props.type}
+        {...props.register}
+        defaultValue={props.defaultValue}
+      />
     </Wrapper>
   );
 }

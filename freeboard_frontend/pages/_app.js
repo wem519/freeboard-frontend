@@ -30,25 +30,32 @@ function MyApp({ Component, pageProps }) {
     if (localStorage.getItem("refreshToken")) getAccessToken(setAccessToken);
   }, []);
 
-  const errorLink = onError(({ graphQlErrors, operation, forward }) => {
-    if (graphQlErrors) {
-      for (const err of graphQlErrors) {
-        if (err.extension?.code === "UNAUTHENTICATED") {
-          operation.setContext({
-            headers: {
-              ...operation.getContext().headers,
-              authorization: `Bearer ${getAccessToken(setAccessToken)}`,
-            },
-          });
-          return forward(operation);
+  const errorLink = onError(
+    // 객체 구조분해할당 graphQL 에러, 실행했던 쿼리, 재전송(요청)할 forward
+    ({ graphQLErrors, operation, forward }) => {
+      if (graphQLErrors) {
+        for (const err of graphQLErrors) {
+          if (err.extensions?.code === "UNAUTHENTICATED") {
+            // 기존의 header 정보 operation.getContext().headers
+            // header에 authorization 관련부분만 바꾸기
+            operation.setContext({
+              headers: {
+                ...operation.getContext().headers,
+                authorization: `Bearer ${getAccessToken(setAccessToken)}`,
+              },
+            });
+            // 실패한 쿼리 재요청
+            return forward(operation);
+          }
         }
       }
     }
-  });
+  );
 
   const uploadLink = createUploadLink({
     uri: "http://backend03.codebootcamp.co.kr/graphql",
     headers: { authorization: `Bearer ${accessToken}` },
+    credentials: "include",
   });
 
   const client = new ApolloClient({

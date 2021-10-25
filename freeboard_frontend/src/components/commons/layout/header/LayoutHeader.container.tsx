@@ -1,11 +1,15 @@
+import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { GlobalContext } from "../../../../../pages/_app";
 import LayoutHeaderUI from "./LayoutHeader.presenter";
+import { FETCH_USER_LOGGEDIN } from "./LayoutHeader.queries";
 
 export default function LayoutHeader() {
   const router = useRouter();
-  const { accessToken, setAccessToken, userInfo } = useContext(GlobalContext);
+  const { accessToken, setAccessToken, setUserInfo } =
+    useContext(GlobalContext);
+  const { data } = useQuery(FETCH_USER_LOGGEDIN);
 
   function onClickLogo() {
     router.push("/boards");
@@ -29,7 +33,8 @@ export default function LayoutHeader() {
       onClickLogout={onClickLogout}
       onClickSignup={onClickSignup}
       accessToken={accessToken}
-      userInfo={userInfo}
+      setUserInfo={setUserInfo}
+      data={data}
     />
   );
 }
