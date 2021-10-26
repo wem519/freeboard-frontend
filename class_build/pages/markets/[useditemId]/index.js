@@ -3,9 +3,9 @@ import {gql, request} from "graphql-request"
 
 export default function MarketsPage(props){
 
-    props.fetchUseditem.name
-    props.fetchUseditem.remarks
-    props.fetchUseditem.image[0]
+    // props.fetchUseditem.name
+    // props.fetchUseditem.remarks
+    // props.fetchUseditem.image[0]
     return(
     <>
     <Head>
