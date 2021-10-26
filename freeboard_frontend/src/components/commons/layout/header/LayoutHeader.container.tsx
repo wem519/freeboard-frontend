@@ -20,7 +20,7 @@ export default function LayoutHeader() {
     router.push("/sign");
   }
   function onClickLogout() {
-    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
     setAccessToken("");
   }
 

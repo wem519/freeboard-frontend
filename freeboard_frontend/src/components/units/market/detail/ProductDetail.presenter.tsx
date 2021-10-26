@@ -1,5 +1,5 @@
 import Dompurify from "dompurify";
-import Map from "../../../commons/map/map";
+
 import {
   Wrapper,
   WrapperHeader,
@@ -20,6 +20,7 @@ import {
   ContentsWrapper,
   TagWrapper,
   MapWrapper,
+  Map,
   ButtonWrapper,
   Button,
 } from "./ProductDetail.styles";
@@ -104,7 +105,7 @@ export default function ProductDetailUI(props) {
           </TagWrapper>
           <Line />
           <MapWrapper>
-            <Map></Map>
+            <Map id="map"></Map>
           </MapWrapper>
         </WrapperBody>
         <ButtonWrapper>

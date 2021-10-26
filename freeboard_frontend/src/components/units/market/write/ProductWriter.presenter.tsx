@@ -17,12 +17,18 @@ import {
   RadioWrapper,
   RadioLabel,
   RadioButton,
+  ButtonWrapper,
   Submit,
+  MoveButton,
 } from "./ProductWriter.styles";
 
 export default function ProductWriteUI(props) {
   return (
-    <form onSubmit={props.handleSubmit(props.onClickSubmit)}>
+    <form
+      onSubmit={props.handleSubmit(
+        props.isEdit ? props.onClickUpdate : props.onClickSubmit
+      )}
+    >
       <Wrapper>
         <Title>{props.isEdit ? "상품 수정하기" : "상품 등록하기"}</Title>
         <Input01
@@ -38,7 +44,11 @@ export default function ProductWriteUI(props) {
           register={props.register("remarks")}
           defaultValue={props.data?.fetchUseditem.remarks}
         />
-        <Context onChange={props.onchangeMyEditor} name="상품설명" />
+        <Context
+          onChange={props.onChangeMyEditor}
+          name="상품설명"
+          defaultValue={props.data?.fetchUseditem.contents}
+        />
         <Input01
           type="text"
           name="판매가격"
@@ -70,8 +80,15 @@ export default function ProductWriteUI(props) {
             </Gps>
             <Address>
               <Label>주소</Label>
-              <AddressInput value={props.myAddress} readOnly></AddressInput>
-              <AddressInput></AddressInput>
+              <AddressInput
+                type="text"
+                value={props.myAddress}
+                readOnly
+              ></AddressInput>
+              <AddressInput
+                type="text"
+                onChange={props.onChangeAddressDetail}
+              ></AddressInput>
             </Address>
           </Location2>
         </Location>
@@ -94,7 +111,12 @@ export default function ProductWriteUI(props) {
           <RadioButton type="radio" name="image"></RadioButton>
           <RadioLabel>사진2</RadioLabel>
         </RadioWrapper>
-        <Submit type="submit">등록하기</Submit>
+        <ButtonWrapper>
+          <Submit type="submit" onClick={props.onClickEdit}>
+            {props.isEdit ? "수정하기" : "등록하기"}
+          </Submit>
+          <MoveButton onClick={props.onClickMoveToList}>목록으로</MoveButton>
+        </ButtonWrapper>
       </Wrapper>
     </form>
   );

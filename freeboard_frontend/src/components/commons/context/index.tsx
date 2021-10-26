@@ -19,6 +19,7 @@ const Quill = styled(ReactQuill)`
 `;
 
 export default function Context(props) {
+  // console.log(props);
   return (
     <Wrapper>
       <Label>{props.name}</Label>

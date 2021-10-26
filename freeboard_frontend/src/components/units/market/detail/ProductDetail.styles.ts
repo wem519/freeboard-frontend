@@ -87,6 +87,12 @@ export const MapWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
+export const Map = styled.div`
+  width: 792px;
+  height: 360px;
+
+  background-color: gray;
+`;
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;

@@ -81,13 +81,23 @@ export const RadioLabel = styled.label`
   font-size: 16px;
   cursor: pointer;
 `;
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+`;
 
 export const Submit = styled.button`
   width: 179px;
   height: 52px;
   font-size: 16px;
-  margin-top: 80px;
+
   cursor: pointer;
-  display: block;
-  margin: auto;
+`;
+export const MoveButton = styled.button`
+  width: 179px;
+  height: 52px;
+  font-size: 16px;
+  margin-left: 40px;
+  cursor: pointer;
 `;

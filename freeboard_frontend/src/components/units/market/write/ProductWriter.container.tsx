@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import ProductWriteUI from "./ProductWriter.presenter";
-import { CREATE_USEDITEM } from "./ProductWriter.queries";
+import { CREATE_USEDITEM, UPDATE_USEDITEM } from "./ProductWriter.queries";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 // import { yupResolver } from "@hookform/resolvers/yup";
@@ -14,6 +14,7 @@ declare const window: typeof globalThis & {
 export default function ProductWrite(props) {
   const router = useRouter();
   const [createUseditem] = useMutation(CREATE_USEDITEM);
+  const [updateUseditem] = useMutation(UPDATE_USEDITEM);
   const { handleSubmit, register, setValue, trigger } = useForm({
     mode: "onChange",
   });
@@ -28,13 +29,23 @@ export default function ProductWrite(props) {
       const result = await createUseditem({
         variables: {
           createUseditemInput: {
-            ...data,
+            name: data.name,
+            remarks: data.remarks,
+            contents: data.contents,
+            price: Number(data.price),
+            tags: data.tags,
+          },
+          useditemAddress: {
+            address: myAddress,
+            myAddressDetail: myAddressDetail,
+            lat: myLat,
+            lng: myLng,
           },
         },
       });
 
       alert("ok");
-      router.push(`/markets/${result.data.createUseditem._id}`);
+      router.push(`/markets/${result.data?.createUseditem._id}`);
     } catch (error) {
       console.log(error);
     }
@@ -43,6 +54,30 @@ export default function ProductWrite(props) {
     setValue("contents", value === "<p><br></p>" ? "" : value);
     console.log(value);
     trigger("contents");
+  }
+  function onChangeAddressDetail(event) {
+    setMyAddressDetail(event.target.value);
+  }
+  function onClickMoveToList() {
+    router.push("/markets");
+  }
+
+  async function onClickUpdate(data) {
+    const result = await updateUseditem({
+      variables: {
+        useditemId: router.query.read,
+        updateUseditemInput: {
+          ...data,
+          useditemAddress: {
+            lat: myLat,
+            lng: myLng,
+          },
+        },
+      },
+    });
+    console.log(data);
+    alert("상품을 수정합니다");
+    router.push(`/markets/${result.data?.updateUseditem._id}`);
   }
 
   useEffect(() => {
@@ -112,6 +147,10 @@ export default function ProductWrite(props) {
       myLat={myLat}
       myLng={myLng}
       myAddress={myAddress}
+      myAddressDetail={myAddressDetail}
+      onChangeAddressDetail={onChangeAddressDetail}
+      onClickMoveToList={onClickMoveToList}
+      onClickUpdate={onClickUpdate}
     />
   );
 }
