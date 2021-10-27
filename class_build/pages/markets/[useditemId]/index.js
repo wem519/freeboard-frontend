@@ -9,7 +9,7 @@ export default function MarketsPage(props){
     return(
     <>
     <Head>
-        <meta property="og:title" contents={props.fetchUseditem.name
+        <meta property="og:title" content={props.fetchUseditem.name
 }/>
         <meta property="og:description" content={props.fetchUseditem.remarks
 }/>
