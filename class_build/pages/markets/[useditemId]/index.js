@@ -5,7 +5,7 @@ export default function MarketsPage(props){
 
     // props.fetchUseditem.name
     // props.fetchUseditem.remarks
-    // props.fetchUseditem.image[0]
+    // props.fetchUseditem.images[0]
     return(
     <>
     <Head>
@@ -13,7 +13,7 @@ export default function MarketsPage(props){
 }/>
         <meta property="og:description" content={props.fetchUseditem.remarks
 }/>
-        <meta property="og:imge" content={props.fetchUseditem.image[0]
+        <meta property="og:image" content={props.fetchUseditem.images[0]
 }/>
     </Head>
     <div>마켓페이지 입니다</div>
@@ -26,13 +26,13 @@ const FETCH_USEDITEM = gql`
         fetchUseditem(useditemId: $useditemId){
             name
             remarks
-            image
+            images
         }
     }
 `
 
 
-
+// ssr 페이지 지정 
 export const getServerSideProps = async (context) => {
     context.query.useditemId
     // 1. graphql 데이터를 요청한다
@@ -48,4 +48,5 @@ export const getServerSideProps = async (context) => {
 
 }
     
-    
+// ssg페이지
+// vm에서 yarn start를 통해 이 페이지를 띄워줘야 함
