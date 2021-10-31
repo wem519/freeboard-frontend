@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		649B24F8DE26DA0DCD2CBB65 /* libPods-freeboard_mobile-freeboard_mobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8D94371834B52CE2BE2E1B /* libPods-freeboard_mobile-freeboard_mobileTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		93A2B51804A7EE597158FAC0 /* Pods_freeboard_mobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449532E1516E99F9AB55EEAF /* Pods_freeboard_mobileTests.framework */; };
-		C77F7A6D21454791B486ACAC /* Pods_freeboard_mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245496D8F57086F694066821 /* Pods_freeboard_mobile.framework */; };
+		AC756D8735D55036D3564E54 /* libPods-freeboard_mobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B14862660844553BF0B76A9D /* libPods-freeboard_mobile.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +36,15 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = freeboard_mobile/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = freeboard_mobile/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = freeboard_mobile/main.m; sourceTree = "<group>"; };
-		245496D8F57086F694066821 /* Pods_freeboard_mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freeboard_mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		43A0FD4ED40AF30A86460F10 /* Pods-freeboard_mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeboard_mobile.debug.xcconfig"; path = "Target Support Files/Pods-freeboard_mobile/Pods-freeboard_mobile.debug.xcconfig"; sourceTree = "<group>"; };
-		449532E1516E99F9AB55EEAF /* Pods_freeboard_mobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freeboard_mobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D5D267F51D4C6A7EF019D3E /* Pods-freeboard_mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeboard_mobile.release.xcconfig"; path = "Target Support Files/Pods-freeboard_mobile/Pods-freeboard_mobile.release.xcconfig"; sourceTree = "<group>"; };
+		271B86906365C694729B419A /* Pods-freeboard_mobile-freeboard_mobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeboard_mobile-freeboard_mobileTests.release.xcconfig"; path = "Target Support Files/Pods-freeboard_mobile-freeboard_mobileTests/Pods-freeboard_mobile-freeboard_mobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		2F666525799D04951F26B2C5 /* Pods-freeboard_mobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeboard_mobileTests.debug.xcconfig"; path = "Target Support Files/Pods-freeboard_mobileTests/Pods-freeboard_mobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		49DA784ACC1D8FC3799CF4BE /* Pods-freeboard_mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeboard_mobile.release.xcconfig"; path = "Target Support Files/Pods-freeboard_mobile/Pods-freeboard_mobile.release.xcconfig"; sourceTree = "<group>"; };
+		4F8D94371834B52CE2BE2E1B /* libPods-freeboard_mobile-freeboard_mobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-freeboard_mobile-freeboard_mobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61490FCE5CDC6614668EF707 /* Pods-freeboard_mobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeboard_mobileTests.release.xcconfig"; path = "Target Support Files/Pods-freeboard_mobileTests/Pods-freeboard_mobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		766D2CEBD777530D2CC0DCAE /* Pods-freeboard_mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeboard_mobile.debug.xcconfig"; path = "Target Support Files/Pods-freeboard_mobile/Pods-freeboard_mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = freeboard_mobile/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AB5A27A907C1BE32503C0762 /* Pods-freeboard_mobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeboard_mobileTests.release.xcconfig"; path = "Target Support Files/Pods-freeboard_mobileTests/Pods-freeboard_mobileTests.release.xcconfig"; sourceTree = "<group>"; };
-		BAC77B21F13F164A404B8993 /* Pods-freeboard_mobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeboard_mobileTests.debug.xcconfig"; path = "Target Support Files/Pods-freeboard_mobileTests/Pods-freeboard_mobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A5C8DD28666DA61754D4F7C4 /* Pods-freeboard_mobile-freeboard_mobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeboard_mobile-freeboard_mobileTests.debug.xcconfig"; path = "Target Support Files/Pods-freeboard_mobile-freeboard_mobileTests/Pods-freeboard_mobile-freeboard_mobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B14862660844553BF0B76A9D /* libPods-freeboard_mobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-freeboard_mobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93A2B51804A7EE597158FAC0 /* Pods_freeboard_mobileTests.framework in Frameworks */,
+				649B24F8DE26DA0DCD2CBB65 /* libPods-freeboard_mobile-freeboard_mobileTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C77F7A6D21454791B486ACAC /* Pods_freeboard_mobile.framework in Frameworks */,
+				AC756D8735D55036D3564E54 /* libPods-freeboard_mobile.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,10 +102,24 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				245496D8F57086F694066821 /* Pods_freeboard_mobile.framework */,
-				449532E1516E99F9AB55EEAF /* Pods_freeboard_mobileTests.framework */,
+				B14862660844553BF0B76A9D /* libPods-freeboard_mobile.a */,
+				4F8D94371834B52CE2BE2E1B /* libPods-freeboard_mobile-freeboard_mobileTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66D6C94C2BFEF459D271E497 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				766D2CEBD777530D2CC0DCAE /* Pods-freeboard_mobile.debug.xcconfig */,
+				49DA784ACC1D8FC3799CF4BE /* Pods-freeboard_mobile.release.xcconfig */,
+				2F666525799D04951F26B2C5 /* Pods-freeboard_mobileTests.debug.xcconfig */,
+				61490FCE5CDC6614668EF707 /* Pods-freeboard_mobileTests.release.xcconfig */,
+				A5C8DD28666DA61754D4F7C4 /* Pods-freeboard_mobile-freeboard_mobileTests.debug.xcconfig */,
+				271B86906365C694729B419A /* Pods-freeboard_mobile-freeboard_mobileTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -121,7 +137,7 @@
 				00E356EF1AD99517003FC87E /* freeboard_mobileTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				DFD8127FD0C5BDE4F916DBB0 /* Pods */,
+				66D6C94C2BFEF459D271E497 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -137,18 +153,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DFD8127FD0C5BDE4F916DBB0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				43A0FD4ED40AF30A86460F10 /* Pods-freeboard_mobile.debug.xcconfig */,
-				7D5D267F51D4C6A7EF019D3E /* Pods-freeboard_mobile.release.xcconfig */,
-				BAC77B21F13F164A404B8993 /* Pods-freeboard_mobileTests.debug.xcconfig */,
-				AB5A27A907C1BE32503C0762 /* Pods-freeboard_mobileTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,10 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "freeboard_mobileTests" */;
 			buildPhases = (
-				CF3CE8B6997A44FBD3926106 /* [CP] Check Pods Manifest.lock */,
+				F8929DE9D931482371B4A4C8 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				A85C805EE6231980DDC6BCE2 /* [CP] Embed Pods Frameworks */,
+				C51297A2C1A640EA09749132 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,12 +181,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "freeboard_mobile" */;
 			buildPhases = (
-				6B66429B1D611504E9E62606 /* [CP] Check Pods Manifest.lock */,
+				C63DAE2B92660260E8035C4C /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				6FE994A28F518EA5E2C7776D /* [CP] Embed Pods Frameworks */,
+				DAE6DAC968E034274FFDE007 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,7 +269,58 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		6B66429B1D611504E9E62606 /* [CP] Check Pods Manifest.lock */ = {
+		6FE994A28F518EA5E2C7776D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freeboard_mobile/Pods-freeboard_mobile-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freeboard_mobile/Pods-freeboard_mobile-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-freeboard_mobile/Pods-freeboard_mobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A85C805EE6231980DDC6BCE2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freeboard_mobile-freeboard_mobileTests/Pods-freeboard_mobile-freeboard_mobileTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freeboard_mobile-freeboard_mobileTests/Pods-freeboard_mobile-freeboard_mobileTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-freeboard_mobile-freeboard_mobileTests/Pods-freeboard_mobile-freeboard_mobileTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C51297A2C1A640EA09749132 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freeboard_mobile-freeboard_mobileTests/Pods-freeboard_mobile-freeboard_mobileTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freeboard_mobile-freeboard_mobileTests/Pods-freeboard_mobile-freeboard_mobileTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-freeboard_mobile-freeboard_mobileTests/Pods-freeboard_mobile-freeboard_mobileTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C63DAE2B92660260E8035C4C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -283,7 +342,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF3CE8B6997A44FBD3926106 /* [CP] Check Pods Manifest.lock */ = {
+		DAE6DAC968E034274FFDE007 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freeboard_mobile/Pods-freeboard_mobile-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-freeboard_mobile/Pods-freeboard_mobile-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-freeboard_mobile/Pods-freeboard_mobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8929DE9D931482371B4A4C8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -298,7 +374,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-freeboard_mobileTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-freeboard_mobile-freeboard_mobileTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -357,7 +433,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BAC77B21F13F164A404B8993 /* Pods-freeboard_mobileTests.debug.xcconfig */;
+			baseConfigurationReference = A5C8DD28666DA61754D4F7C4 /* Pods-freeboard_mobile-freeboard_mobileTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -384,7 +460,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB5A27A907C1BE32503C0762 /* Pods-freeboard_mobileTests.release.xcconfig */;
+			baseConfigurationReference = 271B86906365C694729B419A /* Pods-freeboard_mobile-freeboard_mobileTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -408,7 +484,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43A0FD4ED40AF30A86460F10 /* Pods-freeboard_mobile.debug.xcconfig */;
+			baseConfigurationReference = 766D2CEBD777530D2CC0DCAE /* Pods-freeboard_mobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -434,7 +510,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D5D267F51D4C6A7EF019D3E /* Pods-freeboard_mobile.release.xcconfig */;
+			baseConfigurationReference = 49DA784ACC1D8FC3799CF4BE /* Pods-freeboard_mobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
