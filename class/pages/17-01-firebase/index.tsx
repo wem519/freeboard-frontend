@@ -18,7 +18,7 @@ export default function FirebasePage() {
   return (
     <>
       <div>파이어베이스 페이지입니다</div>
-      <button onClick={onClickSubmit}>등록하기</button>;
+      <button onClick={onClickSubmit}>등록하기</button>
       <button onClick={onClickFetch}>불러오기</button>
     </>
   );
