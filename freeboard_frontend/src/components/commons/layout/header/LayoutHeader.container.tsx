@@ -33,7 +33,6 @@ export default function LayoutHeader() {
       onClickLogout={onClickLogout}
       onClickSignup={onClickSignup}
       accessToken={accessToken}
-      setUserInfo={setUserInfo}
       data={data}
     />
   );

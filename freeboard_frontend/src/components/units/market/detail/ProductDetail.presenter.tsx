@@ -103,7 +103,6 @@ export default function ProductDetailUI(props) {
               {props.data?.fetchUseditem.tags}
             </div>
           </TagWrapper>
-          <Line />
           <MapWrapper>
             <Map id="map"></Map>
           </MapWrapper>

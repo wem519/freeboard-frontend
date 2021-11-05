@@ -48,6 +48,7 @@ export default function ProductWriteUI(props) {
           onChange={props.onChangeMyEditor}
           name="상품설명"
           defaultValue={props.data?.fetchUseditem.contents}
+          contents={props.contents}
         />
         <Input01
           type="text"
@@ -73,21 +74,35 @@ export default function ProductWriteUI(props) {
             <Gps>
               <Label>gps</Label>
               <GpsWrapper>
-                <GpsInput type="text" value={props.myLat} readOnly></GpsInput>
+                <GpsInput
+                  type="text"
+                  value={props.mylatlng.Ma}
+                  readOnly
+                ></GpsInput>
                 <img />
-                <GpsInput type="text" value={props.myLng} readOnly></GpsInput>
+                <GpsInput
+                  type="text"
+                  value={props.mylatlng.La}
+                  readOnly
+                ></GpsInput>
               </GpsWrapper>
             </Gps>
             <Address>
               <Label>주소</Label>
               <AddressInput
                 type="text"
-                value={props.myAddress}
+                value={
+                  props.myAddress ||
+                  props.data?.fetchUseditem.useditemAddress?.myAddress
+                }
                 readOnly
               ></AddressInput>
               <AddressInput
                 type="text"
                 onChange={props.onChangeAddressDetail}
+                defaultValue={
+                  props.data?.fetchUseditem.useditemAddress?.addressDetail
+                }
               ></AddressInput>
             </Address>
           </Location2>

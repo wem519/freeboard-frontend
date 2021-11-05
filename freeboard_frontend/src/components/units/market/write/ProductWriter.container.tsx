@@ -1,4 +1,4 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import ProductWriteUI from "./ProductWriter.presenter";
 import { CREATE_USEDITEM, UPDATE_USEDITEM } from "./ProductWriter.queries";
 import { useRouter } from "next/router";
@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 // import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect } from "react";
 import { useState } from "react";
+import { FETCH_USEDITEM } from "../detail/ProductDetail.queries";
 
 declare const window: typeof globalThis & {
   kakao: any;
@@ -15,11 +16,16 @@ export default function ProductWrite(props) {
   const router = useRouter();
   const [createUseditem] = useMutation(CREATE_USEDITEM);
   const [updateUseditem] = useMutation(UPDATE_USEDITEM);
-  const { handleSubmit, register, setValue, trigger } = useForm({
+
+  const { data } = useQuery(FETCH_USEDITEM, {
+    variables: {
+      useditemId: router.query.read,
+    },
+  });
+  const { handleSubmit, register, setValue, trigger, watch } = useForm({
     mode: "onChange",
   });
-  const [myLat, setMyLat] = useState("");
-  const [myLng, setMyLng] = useState("");
+  const [mylatlng, setMylatlng] = useState("");
   const [myAddress, setMyAddress] = useState("");
   const [myAddressDetail, setMyAddressDetail] = useState("");
 
@@ -35,12 +41,6 @@ export default function ProductWrite(props) {
             price: Number(data.price),
             tags: data.tags,
           },
-          useditemAddress: {
-            address: myAddress,
-            myAddressDetail: myAddressDetail,
-            lat: myLat,
-            lng: myLng,
-          },
         },
       });
 
@@ -50,6 +50,17 @@ export default function ProductWrite(props) {
       console.log(error);
     }
   }
+  useEffect(() => {
+    console.log("데이터", data);
+    if (props?.isEdit && data?.fetchUseditem) {
+      setValue("name", data?.fetchUseditem?.name);
+      setValue("remarks", data?.fetchUseditem?.remarks);
+      setValue("contents", data?.fetchUseditem?.contents);
+      setValue("price", data?.fetchUseditem?.price);
+      setValue("tags", data?.fetchUseditem?.tags);
+    }
+  }, [data]);
+
   function onChangeMyEditor(value) {
     setValue("contents", value === "<p><br></p>" ? "" : value);
     console.log(value);
@@ -67,11 +78,11 @@ export default function ProductWrite(props) {
       variables: {
         useditemId: router.query.read,
         updateUseditemInput: {
-          ...data,
-          useditemAddress: {
-            lat: myLat,
-            lng: myLng,
-          },
+          name: data.name,
+          remarks: data.remarks,
+          contents: data.contents,
+          price: Number(data.price),
+          tags: data.tags,
         },
       },
     });
@@ -96,42 +107,43 @@ export default function ProductWrite(props) {
 
         const map = new window.kakao.maps.Map(container, options);
 
-        console.log(map);
-
+        console.log("지도", map);
+        // 지도를 클릭한 위치에 표출할 마커입니다
         const marker = new window.kakao.maps.Marker({
           // 지도 중심좌표에 마커를 생성합니다
           position: map.getCenter(),
         });
-        const geocoder = new window.kakao.maps.services.Geocoder();
-        // console.log(geocoder);
-        const coord = new window.kakao.maps.LatLng(myLat, myLng);
-        const test = function (coords, callback) {
-          geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
-        };
         marker.setMap(map);
+        // 지도에 마커를 표시합니다
 
         window.kakao.maps.event.addListener(
           map,
           "click",
           function (mouseEvent: { latLng: any }) {
             // 클릭한 위도, 경도 정보를 가져옵니다
-            test(mouseEvent.latLng, function (result, status) {
-              if (status === window.kakao.maps.services.Status.OK) {
-                setMyAddress(result[0].address.address_name);
-              }
-            });
 
             const latlng = mouseEvent.latLng;
+            setMylatlng(latlng);
+            console.log("latlng", latlng);
 
             // 마커 위치를 클릭한 위치로 옮깁니다
             marker.setPosition(latlng);
-
-            setMyLat(latlng.getLat());
-            setMyLng(latlng.getLng());
-            setMyAddress(geocoder.coord2Address);
-            // console.log(myAddress);
           }
         );
+        const geocoder = new window.kakao.maps.services.Geocoder();
+
+        const coord = new window.kakao.maps.LatLng(
+          37.56496830314491,
+          126.93990862062978
+        );
+
+        const callback = function (result, status) {
+          if (status === window.kakao.maps.services.Status.OK) {
+            console.log(result[0].address.address_name);
+          }
+        };
+
+        geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
       });
     };
   }, []);
@@ -143,14 +155,13 @@ export default function ProductWrite(props) {
       register={register}
       onClickSubmit={onClickSubmit}
       onChangeMyEditor={onChangeMyEditor}
-      aaa={props.aaa}
-      myLat={myLat}
-      myLng={myLng}
-      myAddress={myAddress}
-      myAddressDetail={myAddressDetail}
       onChangeAddressDetail={onChangeAddressDetail}
       onClickMoveToList={onClickMoveToList}
       onClickUpdate={onClickUpdate}
+      data={data}
+      setValue={setValue}
+      contents={watch("contents")}
+      mylatlng={mylatlng}
     />
   );
 }

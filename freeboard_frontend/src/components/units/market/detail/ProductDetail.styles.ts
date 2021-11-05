@@ -39,7 +39,7 @@ export const IconWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
-export const Line = styled.div`
+export const Line = styled.label`
   width: 792px;
   height: 1px;
   margin-top: 30px;

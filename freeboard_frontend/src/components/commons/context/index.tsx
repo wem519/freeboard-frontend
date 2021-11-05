@@ -19,11 +19,11 @@ const Quill = styled(ReactQuill)`
 `;
 
 export default function Context(props) {
-  // console.log(props);
+  console.log(props);
   return (
     <Wrapper>
       <Label>{props.name}</Label>
-      <Quill onChange={props.onChange}></Quill>
+      <Quill onChange={props.onChange} value={props.contents || ""}></Quill>
     </Wrapper>
   );
 }
