@@ -67,7 +67,7 @@ export default function Signup() {
             alignItems: "center",
           }}
         >
-          <button style={{ width: "358px", height: "54px" }}>시작하기</button>
+          <button style={{ width: "358px", height: "54px" }}>회원가입</button>
         </div>
       </div>
     </div>
