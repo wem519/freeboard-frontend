@@ -4,10 +4,10 @@ export const Wrapper = styled.div`
   width: 1200px;
   height: 100px;
   margin: auto;
-  background-color: gray;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: #f1f1f1f1;
   /* align-items: center; */
   font-family: "SangSangRock";
 `;
@@ -23,11 +23,11 @@ export const InnerWrapper = styled.div`
 
 export const InnerLogo = styled.div`
   cursor: pointer;
-  color: white;
+  color: black;
 `;
 
 export const InnerButton = styled.div`
   margin: 10px;
   cursor: pointer;
-  color: white;
+  color: black;
 `;

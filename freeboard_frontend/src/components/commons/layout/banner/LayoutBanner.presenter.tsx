@@ -20,16 +20,10 @@ export default function LayoutBannerUI() {
       <Wrapper>
         <Slider {...settings}>
           <div>
-            <SliderImage src="/조드푸르1.png"></SliderImage>
+            <SliderImage src="/Thorong_La.JPG"></SliderImage>
           </div>
           <div>
-            <SliderImage src="/조드푸르2.png"></SliderImage>
-          </div>
-          <div>
-            <SliderImage src="/조드푸르3.png"></SliderImage>
-          </div>
-          <div>
-            <SliderImage src="/조드푸르4.png"></SliderImage>
+            <SliderImage src="/Taj_Mahal.JPG"></SliderImage>
           </div>
         </Slider>
       </Wrapper>

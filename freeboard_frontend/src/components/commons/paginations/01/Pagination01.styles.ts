@@ -5,6 +5,7 @@ interface IpageProps {
 }
 export const Page = styled.span`
   margin: 0px 10px;
+  font-family: "SangSangRock";
 
   color: ${(props: IpageProps) => (props.aaa ? "red" : "black")};
   cursor: ${(props: IpageProps) => (props.aaa ? " none" : "pointer")};

@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   margin: 40px auto;
   /* margin-left:360px;
     margin-right:360px; */
+  font-family: "SangSangRock";
 `;
 export const SearchWrapper = styled.div`
   /* background-color: red; */

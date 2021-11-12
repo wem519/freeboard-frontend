@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "SangSangRock";
 `;
 export const Title = styled.div`
   font-size: 36px;

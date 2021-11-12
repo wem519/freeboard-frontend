@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   margin: auto;
   margin-top: 80px;
   padding: 80px 102px;
+  font-family: "SangSangRock";
 `;
 
 export const Title = styled.div`

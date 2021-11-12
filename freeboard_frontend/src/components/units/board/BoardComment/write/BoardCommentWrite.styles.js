@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   /* height: 550px; */
   /* background-color: black; */
   margin: 40px auto;
+  font-family: "SangSangRock";
 `;
 
 export const CommentIcon = styled.img``;

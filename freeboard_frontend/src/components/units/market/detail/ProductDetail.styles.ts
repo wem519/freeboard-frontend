@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
   align-items: center;
   /* margin: auto; */
   border: 1px solid black;
+  font-family: "SangSangRock";
 `;
 export const WrapperHeader = styled.div`
   width: 792px;

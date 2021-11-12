@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const SearchTitle = styled.input`
   width: 776px;
   height: 52px;
+  font-family: "SangSangRock";
 `;
 export const SearchWrapper = styled.div`
   /* background-color: red; */
@@ -11,6 +12,7 @@ export const SearchWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: "SangSangRock";
 `;
 export const SearchTitle = styled.input`
   width: 776px;

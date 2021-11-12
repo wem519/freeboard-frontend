@@ -1,4 +1,3 @@
-export default function QuestionListUI(){
-
-    return()
+export default function QuestionListUI() {
+  return <div></div>;
 }

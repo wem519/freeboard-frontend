@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   height: 1190px;
   padding-top: 80px;
   margin: 0 auto;
+  font-family: "SangSangRock";
 `;
 export const BestWrapper = styled.div`
   width: 1200px;

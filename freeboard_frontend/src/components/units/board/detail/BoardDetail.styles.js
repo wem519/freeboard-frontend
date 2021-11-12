@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   /* height: 1602px; */
   border: solid 1px black;
   margin: 40px auto;
+  font-family: "SangSangRock";
 `;
 export const Headers = styled.div`
   width: 1200px;

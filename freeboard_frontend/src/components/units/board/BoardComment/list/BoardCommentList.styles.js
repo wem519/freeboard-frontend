@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   padding-top: 20px;
   margin: 0 auto;
   border-bottom: 1px solid lightgrey;
+  font-family: "SangSangRock";
 `;
 
 export const IconWrapper = styled.div`
