@@ -44,7 +44,7 @@ export default function mypage() {
           >
             <span
               style={{
-                width: "119.33px",
+                width: "120px",
                 height: "42px",
                 backgroundColor: "#f1f1f1",
                 border: "1px solid black",
@@ -57,7 +57,7 @@ export default function mypage() {
             </span>
             <span
               style={{
-                width: "119.33px",
+                width: "120px",
                 height: "42px",
                 backgroundColor: "#f1f1f1",
                 border: "1px solid black",
@@ -71,7 +71,7 @@ export default function mypage() {
             </span>
             <span
               style={{
-                width: "119.33px",
+                width: "120px",
                 height: "42px",
                 backgroundColor: "#f1f1f1",
                 border: "1px solid black",
