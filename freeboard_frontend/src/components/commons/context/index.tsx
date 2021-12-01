@@ -18,7 +18,7 @@ const Quill = styled(ReactQuill)`
   padding-bottom: 40px;
 `;
 
-export default function Context(props) {
+export default function Context(props: any) {
   console.log(props);
   return (
     <Wrapper>

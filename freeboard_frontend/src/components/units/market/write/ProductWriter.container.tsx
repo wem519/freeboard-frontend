@@ -4,15 +4,14 @@ import { CREATE_USEDITEM, UPDATE_USEDITEM } from "./ProductWriter.queries";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 // import { yupResolver } from "@hookform/resolvers/yup";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FETCH_USEDITEM } from "../detail/ProductDetail.queries";
 
 declare const window: typeof globalThis & {
   kakao: any;
 };
 
-export default function ProductWrite(props) {
+export default function ProductWrite(props: any) {
   const router = useRouter();
   const [createUseditem] = useMutation(CREATE_USEDITEM);
   const [updateUseditem] = useMutation(UPDATE_USEDITEM);

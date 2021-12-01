@@ -13,7 +13,7 @@ import {
   DateString,
 } from "./BoardCommentList.styles";
 import { useMutation } from "@apollo/client";
-import router, { useRouter } from "next/router";
+import router from "next/router";
 import { useState } from "react";
 import BoardCommentWrite from "../write/BoardCommentWrite.container";
 import {
@@ -22,7 +22,7 @@ import {
 } from "./BoardCommentList.queries";
 import { Modal } from "antd";
 
-export default function BoardCommentListUIItem(props) {
+export default function BoardCommentListUIItem(props: any) {
   const [isEdit, setIsEdit] = useState(false);
   const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
   const [myPassword, setMyPassword] = useState("");
@@ -63,12 +63,7 @@ export default function BoardCommentListUIItem(props) {
   return (
     <>
       {isOpenDeleteModal && (
-        <Modal
-          visible={true}
-          onOk={onClickDelete}
-          onCancel={onCancel}
-          autoClose
-        >
+        <Modal visible={true} onOk={onClickDelete} onCancel={onCancel}>
           <div>비밀번호 입력: </div>
           <input type="password" onChange={onChangeDeletePassword} />
         </Modal>

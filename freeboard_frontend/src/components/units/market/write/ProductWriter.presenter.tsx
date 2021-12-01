@@ -22,7 +22,7 @@ import {
   MoveButton,
 } from "./ProductWriter.styles";
 
-export default function ProductWriteUI(props) {
+export default function ProductWriteUI(props: any) {
   return (
     <form
       onSubmit={props.handleSubmit(

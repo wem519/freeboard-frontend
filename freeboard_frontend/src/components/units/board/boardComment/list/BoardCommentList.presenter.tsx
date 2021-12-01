@@ -1,7 +1,7 @@
 import BoardCommentListUIItem from "./BoardCommentList.presenterItem";
 import InfiniteScroll from "react-infinite-scroller";
 
-export default function BoardCommentListUI(props) {
+export default function BoardCommentListUI(props: any) {
   if (!props.data?.fetchBoardComments.length) return <></>;
   return (
     <>

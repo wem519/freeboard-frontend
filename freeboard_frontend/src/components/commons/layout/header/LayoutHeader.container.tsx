@@ -7,8 +7,7 @@ import { FETCH_USER_LOGGEDIN } from "./LayoutHeader.queries";
 
 export default function LayoutHeader() {
   const router = useRouter();
-  const { accessToken, setAccessToken, setUserInfo } =
-    useContext(GlobalContext);
+  const { accessToken, setAccessToken } = useContext(GlobalContext);
   const { data } = useQuery(FETCH_USER_LOGGEDIN);
 
   function onClickLogo() {

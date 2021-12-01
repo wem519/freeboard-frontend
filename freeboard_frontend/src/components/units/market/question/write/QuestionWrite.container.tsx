@@ -3,7 +3,7 @@ import QuestionUI from "./QuestionWrite.presenter";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import router from "next/router";
-export default function QuestionWritePage(props) {
+export default function QuestionWritePage(props: any) {
   const [createUseditemQuestion] = useMutation(CREATE_USEDITEM_QUESTION);
   const [myContents, setMyContents] = useState("");
 

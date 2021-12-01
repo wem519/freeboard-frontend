@@ -15,7 +15,7 @@ const Input = styled.input`
   margin-top: 16px;
 `;
 
-export default function Input01(props) {
+export default function Input01(props: any) {
   return (
     <Wrapper>
       <Label>{props.name}</Label>

@@ -1,7 +1,7 @@
 import SearchBar01UI from "./Searchbar01.presenter";
 import _ from "lodash";
 
-export default function SearchBar01(props) {
+export default function SearchBar01(props: any) {
   const getDebounce = _.debounce((data) => {
     props.refetch({ search: data });
     props.onChangeKeyword(data);

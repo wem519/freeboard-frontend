@@ -1,9 +1,5 @@
 import {
   Wrapper,
-  SearchWrapper,
-  SearchTitle,
-  SearchDate,
-  SearchButton,
   Board,
   Row,
   ColumnNumber,
@@ -11,19 +7,15 @@ import {
   ColumnWriter,
   ColumnDate,
   ColumnTitle,
-  NumberWrapper,
-  Previos,
-  Next,
-  Number,
   FooterWrapper,
   BoardSummit,
   TextToken,
-} from "../list/BoardList.styles";
+} from "./BoardList.styles";
 import Pagination01 from "../../../commons/paginations/01/Pagination01.container";
 import SearchBar01 from "../../../commons/searchbar01/Searchbar01.container";
 import { v4 as uuidv4 } from "uuid";
 
-export default function BoardListUI(props) {
+export default function BoardListUI(props: any) {
   return (
     <Wrapper>
       <SearchBar01

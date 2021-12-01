@@ -25,7 +25,6 @@ import {
   YoutubeText,
   PictureGroup,
   PictureName,
-  Upload,
   RadioGroup,
   RadioName,
   RadioButton,
@@ -36,9 +35,9 @@ import {
 } from "../../../../components/units/board/write/BoardWrite.styles";
 import { Modal } from "antd";
 import DaumPostcode from "react-daum-postcode";
-import Upload01 from "../../../commons/uploads/Uploads01.container";
+import Upload01 from "../../../commons/uploads/01/Uploads01.container";
 
-export default function BoardWriteUI(props) {
+export default function BoardWriteUI(props: any) {
   return (
     <>
       {props.isOpen && (
@@ -131,9 +130,9 @@ export default function BoardWriteUI(props) {
           {new Array(3).fill(1).map((el, index) => (
             <Upload01
               key={`${el}_${index}`}
-              index={index}
-              onChangeFiles={props.onChangeFiles}
-              defaultFileUrl={props.data?.fetchBoard.images?.[index]}
+              // index={index}
+              // onChangeFiles={props.onChangeFiles}
+              // defaultFileUrl={props.data?.fetchBoard.images?.[index]}
             />
           ))}
         </PictureGroup>

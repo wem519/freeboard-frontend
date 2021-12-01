@@ -7,7 +7,7 @@ import {
 } from "./BoardCommentWrite.queries";
 import { useMutation } from "@apollo/client";
 import { FETCH_BOARD_COMMENTS } from "../list/BoardCommentList.queries";
-export default function BoardCommentWrite(props) {
+export default function BoardCommentWrite(props: any) {
   const router = useRouter();
   const [myWriter, setMyWriter] = useState("");
   const [myPassWord, setMyPassword] = useState("");
@@ -55,8 +55,8 @@ export default function BoardCommentWrite(props) {
       alert(error);
     }
   }
-  async function onClickUpdate(event) {
-    event.target.id;
+  async function onClickUpdate(event: any) {
+    //  event.target.id;
     if (!myContents) {
       alert("내용이 수정되지 않았습니다");
       return;

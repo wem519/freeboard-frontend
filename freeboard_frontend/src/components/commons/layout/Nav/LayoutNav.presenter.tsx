@@ -1,12 +1,9 @@
 import { Wrapper, MenuItem } from "./LayoutNav.styles";
 
-export default function LayoutNavUI(props) {
+export default function LayoutNavUI(props: any) {
   return (
     <>
       <Wrapper>
-        <MenuItem id="/openapis" onClick={props.onClickMenu}>
-          라이브 강아지
-        </MenuItem>
         <MenuItem id="/boards" onClick={props.onClickMenu}>
           라이브 게시판
         </MenuItem>

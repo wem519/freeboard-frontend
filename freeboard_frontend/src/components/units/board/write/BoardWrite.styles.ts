@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+interface IProps {
+  aaa: boolean;
+}
+
 export const Wrapper = styled.div`
   width: 1200px;
   /* height:1715px; */
@@ -179,7 +183,8 @@ export const ButtonGroup = styled.div`
 export const Summit = styled.button`
   width: 179px;
   height: 52px;
-  background-color: ${(props) => (props.aaa === true ? "#ffd600" : "gray")};
+  background-color: ${(props: IProps) =>
+    props.aaa === true ? "#ffd600" : "gray"};
   border: none;
   font-size: 16px;
   margin-left: 12px;

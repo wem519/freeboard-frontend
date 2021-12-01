@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Pagination01UI from "./Pagination01.presenter";
 
-export default function Pagination01(props) {
+export default function Pagination01(props: any) {
   const [clickedPage, setClickedPage] = useState(1);
   const lastPage = Math.ceil(props.count / 10);
 

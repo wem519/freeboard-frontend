@@ -26,7 +26,7 @@ import {
 } from "../../../../components/units/board/detail/BoardDetail.styles";
 import { Tooltip } from "antd";
 
-export default function BoardDetailUI(props) {
+export default function BoardDetailUI(props: any) {
   return (
     <div>
       <Wrapper>

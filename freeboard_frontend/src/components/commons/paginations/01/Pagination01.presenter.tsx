@@ -1,6 +1,6 @@
 import { Page } from "./Pagination01.styles";
 
-export default function Pagination01UI(props) {
+export default function Pagination01UI(props: any) {
   return (
     <>
       <Page onClick={props.onClickPrevPage}>{`<`}</Page>

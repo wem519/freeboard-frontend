@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+interface IProps {
+  isMatched: boolean;
+}
+
 export const Wrapper = styled.div`
   /* background-color: black; */
   width: 1200px;
@@ -46,7 +50,7 @@ export const Row = styled.div`
   line-height: 52px;
 `;
 export const TextToken = styled.span`
-  color: ${(props) => (props.isMatched ? "red" : "black")};
+  color: ${(props: IProps) => (props.isMatched ? "red" : "black")};
 `;
 export const ColumnNumber = styled.div`
   width: 10%;

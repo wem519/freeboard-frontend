@@ -5,7 +5,7 @@ import {
   SearchButton,
 } from "../../units/board/list/BoardList.styles";
 
-export default function SearchBar01UI(props) {
+export default function SearchBar01UI(props: any) {
   return (
     <>
       <SearchWrapper>

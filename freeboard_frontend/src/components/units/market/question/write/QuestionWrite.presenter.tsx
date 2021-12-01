@@ -9,7 +9,7 @@ import {
   Line,
 } from "./QuestionWrite.styles";
 
-export default function QustionWriteUI(props) {
+export default function QustionWriteUI(props: any) {
   return (
     <Wrapper>
       {!props.isEdit && (

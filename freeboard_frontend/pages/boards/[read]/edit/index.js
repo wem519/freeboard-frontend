@@ -38,5 +38,5 @@ export default function BoardEditPage() {
 // board구문에 대해서는 수업내용으로 응용이 가능한데 아지까지 product페이지는 구문 작성에서 자꾸 오류가 발생해서 확인이 필요
 // 수정함수가 있는 페이지(보통 CredentialsContainer.js파일)에서 작성
 
-//address defaultValue가 동작하지 않은 이유
-//=>fetchBoard(fetchBoards아님)를 불러올 때 gql구문에 주소 관련 내용을 입력 X
+// address defaultValue가 동작하지 않은 이유
+// =>fetchBoard(fetchBoards아님)를 불러올 때 gql구문에 주소 관련 내용을 입력 X

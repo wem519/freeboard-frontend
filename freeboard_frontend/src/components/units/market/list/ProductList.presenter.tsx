@@ -30,7 +30,7 @@ import {
   Submit,
 } from "./ProductList.styles";
 
-export default function ProductListUI(props) {
+export default function ProductListUI(props: any) {
   return (
     <Wrapper>
       <Title>베스트 상품</Title>

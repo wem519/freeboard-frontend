@@ -15,4 +15,4 @@ export const FETCH_BOARDS_COUNT = gql`
     fetchBoardsCount
   }
 `;
-//페이지 분할 후 연결해줘야 하기 때문에 단독문장에는 export가 필요없지만 여기서는 export가 필요하다.
+// 페이지 분할 후 연결해줘야 하기 때문에 단독문장에는 export가 필요없지만 여기서는 export가 필요하다.

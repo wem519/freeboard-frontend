@@ -28,8 +28,8 @@ export default function BoardDetail() {
   async function onClickDelete() {
     try {
       await deleteBoard({
-        variables: { boardId: router.query.read } /*query 다음은 폴더명.
-            다르게 작성한다면 onClickDelete 괄호 안에 (event)를 넣고 variables: {boardID : event.target_id}를 입력해준뒤 해당 버튼에 id를 입력(presenter.js에 위치). id={props.data?.fetchBoard._id} 하면 같은 결과가 나온다.  이후에 상세페이지의 댓글을 지우고 싶다면 댓글에 id 값을 주고 event.target 방식으로 처리하는 게 좋다*/,
+        variables: { boardId: router.query.read } /* query 다음은 폴더명.
+            다르게 작성한다면 onClickDelete 괄호 안에 (event)를 넣고 variables: {boardID : event.target_id}를 입력해준뒤 해당 버튼에 id를 입력(presenter.js에 위치). id={props.data?.fetchBoard._id} 하면 같은 결과가 나온다.  이후에 상세페이지의 댓글을 지우고 싶다면 댓글에 id 값을 주고 event.target 방식으로 처리하는 게 좋다 */,
       });
       alert("게시물이 삭제되었습니다.");
       router.push(`/boards`);

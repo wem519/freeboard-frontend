@@ -10,15 +10,16 @@ import { globalStyles } from "../src/commons/styles/globalStyles";
 import Layout from "../src/components/commons/layout";
 import { createUploadLink } from "apollo-upload-client";
 import { createContext, useEffect, useState } from "react";
+import { AppProps } from "next/app";
 import { getAccessToken } from "../src/commons/libraries/getAccessToken";
 import { onError } from "@apollo/client/link/error";
 
 export const GlobalContext = createContext(null);
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   const [accessToken, setAccessToken] = useState("");
   const [userInfo, setUserInfo] = useState({});
-  const value = {
+  const value: any = {
     accessToken: accessToken,
     setAccessToken: setAccessToken,
     userInfo: userInfo,
@@ -54,7 +55,7 @@ function MyApp({ Component, pageProps }) {
   );
 
   const uploadLink = createUploadLink({
-    uri: "https://backend03.codebootcamp.co.kr/graphql",
+    uri: "https://backend03-team.codebootcamp.co.kr/team04",
     headers: { authorization: `Bearer ${accessToken}` },
     credentials: "include",
   });

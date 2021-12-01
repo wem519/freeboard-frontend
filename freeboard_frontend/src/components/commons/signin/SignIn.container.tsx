@@ -17,7 +17,7 @@ const LOGIN_USER = gql`
 
 export default function SignInPage() {
   const router = useRouter();
-  const { setAccessToken, setUserInfo } = useContext(GlobalContext);
+  const { setAccessToken } = useContext(GlobalContext);
   const { handleSubmit, register, formState } = useForm({
     mode: "onChange",
     resolver: yupResolver(schema),

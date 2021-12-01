@@ -14,10 +14,7 @@ export const SearchWrapper = styled.div`
   justify-content: space-between;
   font-family: "SangSangRock";
 `;
-export const SearchTitle = styled.input`
-  width: 776px;
-  height: 52px;
-`;
+
 export const SearchDate = styled.div`
   width: 244px;
   height: 52px;

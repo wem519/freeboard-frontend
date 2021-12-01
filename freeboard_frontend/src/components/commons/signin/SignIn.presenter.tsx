@@ -1,7 +1,7 @@
 import { Wrapper } from "./SignIn.styles";
 import Error01 from "../errors/01/error01";
 
-export default function SignInUI(props) {
+export default function SignInUI(props: any) {
   return (
     <>
       <Wrapper>

@@ -25,7 +25,7 @@ import {
   Button,
 } from "./ProductDetail.styles";
 
-export default function ProductDetailUI(props) {
+export default function ProductDetailUI(props: any) {
   return (
     <>
       <Wrapper>

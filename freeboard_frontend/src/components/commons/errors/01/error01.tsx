@@ -4,6 +4,6 @@ const ErrMsg = styled.div`
   color: red;
 `;
 
-export default function Error01(props) {
+export default function Error01(props: any) {
   return <ErrMsg>{props.value}</ErrMsg>;
 }
