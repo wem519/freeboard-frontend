@@ -4,7 +4,8 @@ interface IpageProps {
   aaa?: boolean;
 }
 export const Page = styled.span`
-  margin: 0px 10px;
+  margin: 0px 20px;
+
   font-family: "SangSangRock";
 
   color: ${(props: IpageProps) => (props.aaa ? "red" : "black")};

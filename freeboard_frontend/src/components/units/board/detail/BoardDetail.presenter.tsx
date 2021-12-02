@@ -34,7 +34,7 @@ export default function BoardDetailUI(props: any) {
           <User src="/user.png" />
           <Manage>
             <Name>{props.data?.fetchBoard.writer}</Name>
-            <Date>{props.data?.fetchBoard.createdAt}</Date>
+            <Date>{props.data?.fetchBoard.createdAt.slice(0, 10)}</Date>
           </Manage>
           <Attach src="/attach.png" />
           <Tooltip

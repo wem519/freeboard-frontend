@@ -48,21 +48,30 @@ export default function BoardListUI(props: any) {
                 ))}
             </ColumnTitle>
             <ColumnWriter>{el.writer}</ColumnWriter>
-            <ColumnDate>{el.createdAt}</ColumnDate>
+            <ColumnDate>{el.createdAt.slice(0, 10)}</ColumnDate>
           </Row>
         ))}
       </Board>
       <FooterWrapper>
-        <Pagination01
-          refetch={props.refetch}
-          startPage={props.startPage}
-          setStartPage={props.setStartPage}
-          count={props.count}
-        />
-
         <BoardSummit onClick={props.onClickMoveToBoardNew}>
           게시물 등록하기
         </BoardSummit>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "1200px",
+          }}
+        >
+          <Pagination01
+            refetch={props.refetch}
+            startPage={props.startPage}
+            setStartPage={props.setStartPage}
+            count={props.count}
+          />
+        </div>
       </FooterWrapper>
     </Wrapper>
   );

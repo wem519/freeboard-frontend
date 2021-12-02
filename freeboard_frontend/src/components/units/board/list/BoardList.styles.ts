@@ -79,7 +79,7 @@ export const ColumnTitle = styled.div`
 `;
 
 export const FooterWrapper = styled.div`
-  width: 100%;
+  width: 1200px;
   /* height: 52px; */
   display: flex;
   flex-direction: row;

@@ -28,7 +28,6 @@ export default function BoardList() {
   function onChangeKeyword(value: string) {
     setKeyword(value);
   }
-
   return (
     <BoardListUI
       data={data}
