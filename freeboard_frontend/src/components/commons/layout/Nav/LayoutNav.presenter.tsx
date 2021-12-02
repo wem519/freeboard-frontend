@@ -5,10 +5,10 @@ export default function LayoutNavUI(props: any) {
     <>
       <Wrapper>
         <MenuItem id="/boards" onClick={props.onClickMenu}>
-          라이브 게시판
+          쓸 얘기를 부탁해
         </MenuItem>
         <MenuItem id="/markets" onClick={props.onClickMenu}>
-          라이브 상품
+          쓸 애기를 부탁해
         </MenuItem>
         <MenuItem id="/mypages" onClick={props.onClickMenu}>
           마이 페이지
