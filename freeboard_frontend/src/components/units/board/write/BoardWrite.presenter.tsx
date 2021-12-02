@@ -130,9 +130,9 @@ export default function BoardWriteUI(props: any) {
           {new Array(3).fill(1).map((el, index) => (
             <Upload01
               key={`${el}_${index}`}
-              // index={index}
-              // onChangeFiles={props.onChangeFiles}
-              // defaultFileUrl={props.data?.fetchBoard.images?.[index]}
+              index={index}
+              onChangeFiles={props.onChangeFiles}
+              defaultFileUrl={props.data?.fetchBoard.images?.[index]}
             />
           ))}
         </PictureGroup>

@@ -52,7 +52,7 @@ export const Location = styled.img`
 `;
 
 export const Name = styled.div`
-  width: 70px;
+  /* width: 70px; */
   height: 40px;
   font-size: 24px;
 `;
