@@ -14,7 +14,9 @@ export default function FirebasePage() {
     const blog = collection(getFirestore(firebaseApp), "blog");
     const result = await getDocs(blog);
     const docs = result.docs.map((el) => el.data());
+    console.log(docs);
   }
+
   return (
     <>
       <div>파이어베이스 페이지입니다</div>
