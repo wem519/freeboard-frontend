@@ -29,7 +29,7 @@ export default function ImageUploadPreviewPage() {
   }
   function onChangeFile(event) {
     const file = event.target.files[0];
-    // console.log(file);
+    console.log(file, "사진");
     if (!fileValidation(file)) return;
 
     const fileReader = new FileReader();
